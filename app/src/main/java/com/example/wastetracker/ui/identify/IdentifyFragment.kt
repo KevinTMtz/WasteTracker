@@ -1,20 +1,21 @@
 package com.example.wastetracker.ui.identify
 
+import android.app.Activity.RESULT_OK
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.wastetracker.databinding.FragmentIdentifyBinding
 
 class IdentifyFragment : Fragment() {
 
     private var _binding: FragmentIdentifyBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,21 +23,46 @@ class IdentifyFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(IdentifyViewModel::class.java)
-
         _binding = FragmentIdentifyBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.takePictureButton.setOnClickListener {
+            dispatchTakePictureIntent()
         }
-        return root
+
+        binding.takeAnotherButton.setOnClickListener {
+            binding.takePictureButton.visibility = View.VISIBLE
+            binding.capturedImageView.setImageBitmap(null)
+            binding.resultCard.visibility = View.GONE
+
+            dispatchTakePictureIntent()
+        }
+
+        return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    val REQUEST_IMAGE_CAPTURE = 1
+
+    private fun dispatchTakePictureIntent() {
+        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        try {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+        } catch (e: ActivityNotFoundException) {
+            // display error state to the user
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            val imageBitmap = data?.extras?.get("data") as Bitmap
+            binding.capturedImageView.setImageBitmap(imageBitmap)
+
+            binding.takePictureButton.visibility = View.GONE
+            binding.resultCard.visibility = View.VISIBLE
+        }
     }
 }

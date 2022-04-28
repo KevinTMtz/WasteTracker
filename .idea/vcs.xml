@@ -2,15 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/Futbolito" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/Gastos" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/Homework" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/Homework/TecDeMonterrey/Semester8/Android Apps/ToDoList" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/NumbersApp" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/Sentinel" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/TipCalculator" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/ToDoList" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/WasteTracker" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Github/ny-times-top" vcs="Git" />
   </component>
 </project>
