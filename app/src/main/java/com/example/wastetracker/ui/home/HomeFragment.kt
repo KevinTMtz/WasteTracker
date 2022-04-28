@@ -1,38 +1,44 @@
 package com.example.wastetracker.ui.home
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.wastetracker.databinding.FragmentHomeBinding
+import com.example.wastetracker.ui.home.adapter.HomeAdapter
+import com.example.wastetracker.ui.home.data.HomeDataProvider
+
 
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val homeRecyclerView : RecyclerView = binding.homeRecyclerView
+        val homeAdapter = HomeAdapter(HomeDataProvider.getData())
+
+        homeRecyclerView.layoutManager = LinearLayoutManager(activity)
+        homeRecyclerView.adapter = homeAdapter
+
+        homeAdapter.setOnItemClickListener(object: HomeAdapter.ClickListener {
+            override fun onItemClick(view: View, pos: Int) {
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"))
+                startActivity(browserIntent)
+            }
+        })
     }
 
     override fun onDestroyView() {

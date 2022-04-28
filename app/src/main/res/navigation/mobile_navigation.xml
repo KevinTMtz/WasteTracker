@@ -20,7 +20,7 @@
         android:id="@+id/navigation_account"
         android:name="com.example.wastetracker.ui.account.AccountFragment"
         android:label="@string/title_account"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/navigation_calculate"
         android:name="com.example.wastetracker.ui.calculate.CalculateFragment"
