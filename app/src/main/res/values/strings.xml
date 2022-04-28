@@ -6,6 +6,7 @@
     <string name="title_identify">Identify</string>
     <string name="title_learn">Learn</string>
     <string name="title_account">Account</string>
+    <string name="title_update_account">Update Account</string>
 
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
 

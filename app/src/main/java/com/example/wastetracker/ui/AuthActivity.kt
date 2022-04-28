@@ -15,7 +15,7 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.loginButton.setOnClickListener {
+        binding.authLoginButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
 
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

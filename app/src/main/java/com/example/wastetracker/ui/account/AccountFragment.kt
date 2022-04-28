@@ -1,20 +1,19 @@
 package com.example.wastetracker.ui.account
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.wastetracker.R
 import com.example.wastetracker.databinding.FragmentAccountBinding
+import com.example.wastetracker.ui.LandingPageActivity
 
 class AccountFragment : Fragment() {
-
     private var _binding: FragmentAccountBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,17 +21,19 @@ class AccountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(AccountViewModel::class.java)
-
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.accountLogoutButton.setOnClickListener {
+            val intent = Intent(context, LandingPageActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
         }
-        return root
+
+        binding.accountGoToUpdateButton.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_account_to_updateAccountFragment)
+        }
+
+        return binding.root
     }
 
     override fun onDestroyView() {

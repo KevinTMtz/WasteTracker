@@ -14,13 +14,18 @@
     <fragment
         android:id="@+id/navigation_identify"
         android:name="com.example.wastetracker.ui.identify.IdentifyFragment"
-        android:label="@string/title_identify" />
+        android:label="@string/title_identify"
+        tools:layout="@layout/fragment_identify" />
 
     <fragment
         android:id="@+id/navigation_account"
         android:name="com.example.wastetracker.ui.account.AccountFragment"
         android:label="@string/title_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_navigation_account_to_updateAccountFragment"
+            app:destination="@id/updateAccountFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_calculate"
         android:name="com.example.wastetracker.ui.calculate.CalculateFragment"
@@ -31,4 +36,13 @@
         android:name="com.example.wastetracker.ui.learn.LearnFragment"
         android:label="@string/title_learn"
         tools:layout="@layout/fragment_learn" />
+    <fragment
+        android:id="@+id/updateAccountFragment"
+        android:name="com.example.wastetracker.ui.account.update.UpdateAccountFragment"
+        android:label="@string/title_update_account"
+        tools:layout="@layout/fragment_update_account" >
+        <action
+            android:id="@+id/action_updateAccountFragment_to_navigation_account"
+            app:destination="@id/navigation_account" />
+    </fragment>
 </navigation>

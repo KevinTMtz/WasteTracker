@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/email_text"
+        android:id="@+id/auth_email_text"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/auth_text_view" />
 
     <EditText
-        android:id="@+id/password_text"
+        android:id="@+id/auth_password_text"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -40,13 +40,13 @@
         android:layout_marginEnd="16dp"
         android:ems="12"
         android:hint="Password"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_text" />
+        app:layout_constraintTop_toBottomOf="@+id/auth_email_text" />
 
     <EditText
-        android:id="@+id/password_text2"
+        android:id="@+id/auth_confirm_password_text"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -54,18 +54,18 @@
         android:layout_marginEnd="16dp"
         android:ems="12"
         android:hint="Confirm password"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_text" />
+        app:layout_constraintTop_toBottomOf="@+id/auth_password_text" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/auth_login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_text2" />
+        app:layout_constraintTop_toBottomOf="@+id/auth_confirm_password_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
