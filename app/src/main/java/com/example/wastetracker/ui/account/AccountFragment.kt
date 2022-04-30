@@ -30,7 +30,7 @@ class AccountFragment : Fragment() {
         }
 
         binding.accountGoToUpdateButton.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_account_to_updateAccountFragment)
+            findNavController().navigate(R.id.action_navigation_account_to_update_account)
         }
 
         return binding.root

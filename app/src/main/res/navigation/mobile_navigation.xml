@@ -23,8 +23,8 @@
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" >
         <action
-            android:id="@+id/action_navigation_account_to_updateAccountFragment"
-            app:destination="@id/updateAccountFragment" />
+            android:id="@+id/action_navigation_account_to_update_account"
+            app:destination="@id/navigation_update_account" />
     </fragment>
     <fragment
         android:id="@+id/navigation_calculate"
@@ -35,14 +35,23 @@
         android:id="@+id/navigation_learn"
         android:name="com.example.wastetracker.ui.learn.LearnFragment"
         android:label="@string/title_learn"
-        tools:layout="@layout/fragment_learn" />
+        tools:layout="@layout/fragment_learn" >
+        <action
+            android:id="@+id/action_navigation_learn_to_navigation_information"
+            app:destination="@id/navigation_information" />
+    </fragment>
     <fragment
-        android:id="@+id/updateAccountFragment"
+        android:id="@+id/navigation_update_account"
         android:name="com.example.wastetracker.ui.account.update.UpdateAccountFragment"
         android:label="@string/title_update_account"
         tools:layout="@layout/fragment_update_account" >
         <action
-            android:id="@+id/action_updateAccountFragment_to_navigation_account"
+            android:id="@+id/action_update_account_to_navigation_account"
             app:destination="@id/navigation_account" />
     </fragment>
+    <fragment
+        android:id="@+id/navigation_information"
+        android:name="com.example.wastetracker.ui.learn.info.InformationFragment"
+        android:label="@string/title_information"
+        tools:layout="@layout/fragment_information" />
 </navigation>

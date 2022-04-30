@@ -52,7 +52,7 @@ class IdentifyFragment : Fragment() {
         try {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
         } catch (e: ActivityNotFoundException) {
-            // display error state to the user
+            // TODO: display error state to the user
         }
     }
 

@@ -2,9 +2,14 @@
     <string name="app_name">Waste Tracker</string>
     <string name="title_activity_main_layout">MainLayout</string>
     <string name="title_home">Home</string>
+
     <string name="title_calculate">Calculate</string>
+
     <string name="title_identify">Identify</string>
+
     <string name="title_learn">Learn</string>
+    <string name="title_information">Know more</string>
+
     <string name="title_account">Account</string>
     <string name="title_update_account">Update Account</string>
 

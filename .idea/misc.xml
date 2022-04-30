@@ -18,11 +18,14 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29393115942028986" />
         <entry key="app/src/main/res/layout/activity_main_layout.xml" value="0.29393115942028986" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.29257246376811596" />
+        <entry key="app/src/main/res/layout/cell_column.xml" value="0.3491847826086957" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_calculate.xml" value="0.17097264437689969" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.29393115942028986" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.29393115942028986" />
+        <entry key="app/src/main/res/layout/fragment_horizontal_recycler_view.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/fragment_identify.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_information.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.29393115942028986" />
         <entry key="app/src/main/res/layout/fragment_update_account.xml" value="0.335" />
