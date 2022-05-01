@@ -31,7 +31,8 @@ class CalculateFragment : Fragment() {
         _binding = FragmentCalculateBinding.inflate(inflater, container, false)
 
         activity?.supportFragmentManager?.commit {
-            add(R.id.calculate_linear_layout, questions[i], "fragment_question_${i+1}")
+            i = 0
+            replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i+1}")
             setReorderingAllowed(true)
         }
 

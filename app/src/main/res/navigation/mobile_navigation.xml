@@ -51,13 +51,19 @@
         tools:layout="@layout/fragment_update_account" >
         <action
             android:id="@+id/action_update_account_to_navigation_account"
-            app:destination="@id/navigation_account" />
+            app:destination="@id/navigation_account"
+            app:popUpTo="@id/navigation_account" />
     </fragment>
     <fragment
         android:id="@+id/navigation_information"
         android:name="com.example.wastetracker.ui.learn.info.InformationFragment"
         android:label="@string/title_information"
-        tools:layout="@layout/fragment_information" />
+        tools:layout="@layout/fragment_information" >
+        <action
+            android:id="@+id/action_navigation_information_to_navigation_learn"
+            app:destination="@id/navigation_learn"
+            app:popUpTo="@id/navigation_learn" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_results"
         android:name="com.example.wastetracker.ui.calculate.results.ResultsFragment"
@@ -66,5 +72,9 @@
         <action
             android:id="@+id/action_results_to_navigation_learn"
             app:destination="@id/navigation_learn" />
+        <action
+            android:id="@+id/action_navigation_results_to_navigation_calculate"
+            app:destination="@id/navigation_calculate"
+            app:popUpTo="@id/navigation_calculate" />
     </fragment>
 </navigation>
