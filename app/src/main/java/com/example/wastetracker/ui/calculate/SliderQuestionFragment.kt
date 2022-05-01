@@ -14,6 +14,7 @@ class SliderQuestionFragment(private val number: Int, private val question: Stri
 
     private lateinit var binding: FragmentSliderQuestionBinding
     private var answer: Double? = null
+    // TODO: Define a better dict of labels
     private val labels = mapOf(
         0 to "Never",
         1 to "Hardly ever",

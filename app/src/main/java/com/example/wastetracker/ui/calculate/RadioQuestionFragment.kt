@@ -27,8 +27,10 @@ class RadioQuestionFragment(private val number: Int, private val question: Strin
 
         binding.questionNumber.text = "Question #${number}"
         binding.questionText.text = question
+        // TODO: Add radio buttons programmatically
         binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
             val checked = group.findViewById<RadioButton>(checkedId)
+            // TODO: Find a way to have a value and text properties for radio button
         }
 
         return binding.root
