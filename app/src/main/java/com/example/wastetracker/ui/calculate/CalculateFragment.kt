@@ -24,10 +24,12 @@ class CalculateFragment : Fragment() {
     ): View? {
         _binding = FragmentCalculateBinding.inflate(inflater, container, false)
 
-        val slider = SliderQuestionFragment(1, "How often do you recycle?")
+        val sliderFragment = SliderQuestionFragment(1, "How often do you recycle?")
+        val radioFragment = RadioQuestionFragment(2, "Do you own an electric car?")
 
         activity?.supportFragmentManager?.commit {
-            add(R.id.linear_layout, slider, "fragment_question_1")
+            add(R.id.linear_layout, sliderFragment, "fragment_question_1")
+            add(R.id.linear_layout, radioFragment, "fragment_question_2")
             setReorderingAllowed(true)
         }
         return binding.root
