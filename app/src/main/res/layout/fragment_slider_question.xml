@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.calculate.SliderQuestionFragment">
+    tools:context=".ui.calculate.questions.SliderQuestionFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,18 +25,18 @@
                 android:id="@+id/question_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="Question Number"
                 android:textStyle="bold"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintBottom_toTopOf="@id/question_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constrainedWidth="true"
                 app:layout_constraintHorizontal_bias="0.0"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/question_text"
@@ -41,29 +44,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
                 android:text="Question Text"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintBottom_toTopOf="@id/slider"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constrainedWidth="true"
                 app:layout_constraintHorizontal_bias="0.0"
-                />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/slider"
-                android:valueFrom="0.0"
-                android:valueTo="4.0"
-                android:stepSize="1.0"
-                android:value="2.0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="Select the value"
+                android:stepSize="1.0"
+                android:value="2.0"
+                android:valueFrom="0.0"
+                android:valueTo="4.0"
+                app:labelBehavior="floating"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:labelBehavior="floating"
-                android:contentDescription="Select the value"
-                />
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,4 +1,4 @@
-package com.example.wastetracker.ui.calculate
+package com.example.wastetracker.ui.calculate.results
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -26,8 +26,7 @@ class ResultsFragment : Fragment() {
         _binding = FragmentResultsBinding.inflate(inflater, container, false)
 
         binding.learnButton.setOnClickListener {
-            // TODO: Fix bug that does not allow to get back or remove button
-            // findNavController().navigate(R.id.action_results_to_navigation_learn)
+            findNavController().navigate(R.id.action_results_to_navigation_learn)
         }
 
         return binding.root

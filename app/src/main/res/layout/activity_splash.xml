@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_splash_scene"
-    tools:context=".ui.SplashActivity"
-    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+    tools:context=".ui.SplashActivity" >
 
     <View
         android:id="@+id/splash_background"

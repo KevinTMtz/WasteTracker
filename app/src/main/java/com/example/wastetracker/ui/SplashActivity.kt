@@ -25,6 +25,7 @@ class SplashActivity : AppCompatActivity() {
     private fun executeSplash() {
         motionLayout = findViewById(R.id.splash_motion_layout)
         motionLayout.startLayoutAnimation()
+
         motionLayout.setTransitionListener(object: MotionLayout.TransitionListener {
             override fun onTransitionStarted(
                 motionLayout: MotionLayout?,

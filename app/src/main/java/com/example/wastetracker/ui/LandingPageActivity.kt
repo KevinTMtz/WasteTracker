@@ -9,6 +9,8 @@ class LandingPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLandingPageBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
+
         super.onCreate(savedInstanceState)
 
         binding = ActivityLandingPageBinding.inflate(layoutInflater)

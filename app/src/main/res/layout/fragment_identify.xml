@@ -11,7 +11,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:visibility="gone"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
         app:cardMaxElevation="8dp"
@@ -19,7 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/captured_image_view">
+        app:layout_constraintTop_toBottomOf="@+id/captured_image_card"
+        android:visibility="gone" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/result_layout"
@@ -75,16 +75,24 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/captured_image_view"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/captured_image_card"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/captured_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/backgrounds/scenic" />
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/take_picture_button"

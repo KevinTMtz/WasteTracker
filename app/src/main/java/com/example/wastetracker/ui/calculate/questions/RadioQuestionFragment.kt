@@ -1,4 +1,4 @@
-package com.example.wastetracker.ui.calculate
+package com.example.wastetracker.ui.calculate.questions
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -33,7 +33,7 @@
         tools:layout="@layout/fragment_calculate" >
         <action
             android:id="@+id/action_navigation_calculate_to_resultsFragment"
-            app:destination="@id/resultsFragment" />
+            app:destination="@id/navigation_results" />
     </fragment>
     <fragment
         android:id="@+id/navigation_learn"
@@ -59,10 +59,10 @@
         android:label="@string/title_information"
         tools:layout="@layout/fragment_information" />
     <fragment
-        android:id="@+id/resultsFragment"
-        android:name="com.example.wastetracker.ui.calculate.ResultsFragment"
-        android:label="fragment_results"
-        tools:layout="@layout/fragment_results" >
+        android:id="@+id/navigation_results"
+        android:name="com.example.wastetracker.ui.calculate.results.ResultsFragment"
+        android:label="@string/title_results"
+        tools:layout="@layout/fragment_results">
         <action
             android:id="@+id/action_results_to_navigation_learn"
             app:destination="@id/navigation_learn" />

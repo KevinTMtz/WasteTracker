@@ -32,6 +32,7 @@ class IdentifyFragment : Fragment() {
         binding.takeAnotherButton.setOnClickListener {
             binding.takePictureButton.visibility = View.VISIBLE
             binding.capturedImageView.setImageBitmap(null)
+            binding.capturedImageCard.visibility = View.GONE
             binding.resultCard.visibility = View.GONE
 
             dispatchTakePictureIntent()
@@ -45,7 +46,7 @@ class IdentifyFragment : Fragment() {
         _binding = null
     }
 
-    val REQUEST_IMAGE_CAPTURE = 1
+    private val REQUEST_IMAGE_CAPTURE = 1
 
     private fun dispatchTakePictureIntent() {
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -58,6 +59,8 @@ class IdentifyFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            binding.capturedImageCard.visibility = View.VISIBLE
+
             val imageBitmap = data?.extras?.get("data") as Bitmap
             binding.capturedImageView.setImageBitmap(imageBitmap)
 
