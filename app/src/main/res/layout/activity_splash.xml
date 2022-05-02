@@ -18,7 +18,7 @@
         android:id="@+id/splash_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_launcher_foreground"
+        app:srcCompat="@drawable/leaf"
         tools:layout_editor_absoluteX="151dp"
         tools:layout_editor_absoluteY="311dp" />
 </androidx.constraintlayout.motion.widget.MotionLayout>
