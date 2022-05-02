@@ -67,9 +67,9 @@
 
         <ImageView
             android:id="@+id/account_image_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:src="@tools:sample/avatars" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
     </androidx.cardview.widget.CardView>
 
     <Button
@@ -82,13 +82,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_confirm_password_text" />
 
-    <Button
-        android:id="@+id/update_cancel_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_account_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

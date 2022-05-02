@@ -15,10 +15,6 @@ import com.example.wastetracker.ui.learn.adapter.HorizontalRecyclerViewAdapter
 class HorizontalRecyclerViewFragment(private val title: String, private val data: List<String>) : Fragment() {
     private lateinit var binding: FragmentHorizontalRecyclerViewBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

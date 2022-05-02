@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import com.example.wastetracker.R
 import com.example.wastetracker.databinding.FragmentCalculateBinding
+import com.example.wastetracker.ui.calculate.questions.RadioQuestionFragment
+import com.example.wastetracker.ui.calculate.questions.SliderQuestionFragment
 
 class CalculateFragment : Fragment() {
     private var _binding: FragmentCalculateBinding? = null
@@ -23,48 +24,54 @@ class CalculateFragment : Fragment() {
     )
     private var i = 0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentCalculateBinding.inflate(inflater, container, false)
 
-        /*
-        val sliderFragment = SliderQuestionFragment(1, "How often do you recycle?")
-        val radioFragment = RadioQuestionFragment(2, "Do you own an electric car?")
-
         activity?.supportFragmentManager?.commit {
-            add(R.id.linear_layout, sliderFragment, "fragment_question_1")
-            add(R.id.linear_layout, radioFragment, "fragment_question_2")
-            for (i in 3..15){
-                val fragment = SliderQuestionFragment(i, "Question #${i}")
-                add(R.id.linear_layout, fragment, "fragment_question_${i}")
-            }
-
+            i = 0
+            replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i+1}")
             setReorderingAllowed(true)
         }
-         */
-        activity?.supportFragmentManager?.commit {
-            add(R.id.calculate_container, questions[i], "fragment_question_${i+1}")
-            setReorderingAllowed(true)
+
+        binding.backButton.setOnClickListener {
+            if (i > 0) {
+                i--
+
+                checkIfShowBackButton(i)
+
+                activity?.supportFragmentManager?.commit {
+                    replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i + 1}")
+                    setReorderingAllowed(true)
+                }
+            }
         }
 
         binding.nextButton.setOnClickListener {
             i++
+
+            checkIfShowBackButton(i)
+
             if (i == questions.size) {
                 findNavController().navigate(R.id.action_navigation_calculate_to_resultsFragment)
             } else {
                 activity?.supportFragmentManager?.commit {
-                    replace(R.id.calculate_container, questions[i], "fragment_question_${i + 1}")
+                    replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i + 1}")
                     setReorderingAllowed(true)
                 }
             }
         }
 
         return binding.root
+    }
+
+    private fun checkIfShowBackButton(pos: Int) {
+        if (pos < 1) {
+            binding.backButton.visibility = View.GONE
+        } else {
+            binding.backButton.visibility = View.VISIBLE
+        }
     }
 }

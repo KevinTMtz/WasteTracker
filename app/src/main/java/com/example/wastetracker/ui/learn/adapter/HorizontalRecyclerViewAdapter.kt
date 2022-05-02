@@ -24,7 +24,7 @@ class HorizontalRecyclerViewAdapter (private val recyclerList: List<String>): Re
 
         fun bind(text: String) {
             title.text = text
-            description.text = text
+            description.text = "Description of ${text}"
         }
 
         init {

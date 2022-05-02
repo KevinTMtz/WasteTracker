@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_account_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.account.AccountFragment">
@@ -10,17 +11,19 @@
         android:id="@+id/account_card_view"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:cardCornerRadius="50dp"
-        android:layout_centerHorizontal="true">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/account_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:src="@tools:sample/avatars" />
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_launcher_background" />
     </androidx.cardview.widget.CardView>
 
     <TextView
