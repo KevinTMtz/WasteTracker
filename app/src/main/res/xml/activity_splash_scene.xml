@@ -30,9 +30,9 @@
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="300dp"
+            android:layout_width="200dp"
             android:id="@+id/splash_logo"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
