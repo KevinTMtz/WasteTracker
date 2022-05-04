@@ -1,6 +1,7 @@
 package com.example.wastetracker
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -31,6 +32,21 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_account
             )
         )
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.navigation_update_account -> {
+                    binding.navView.visibility = View.GONE
+                }
+                R.id.navigation_results -> {
+                    binding.navView.visibility = View.GONE
+                }
+                R.id.navigation_information -> {
+                    binding.navView.visibility = View.GONE
+                }
+                else -> binding.navView.visibility = View.VISIBLE
+            }
+        }
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)

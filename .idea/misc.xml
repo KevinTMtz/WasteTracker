@@ -43,6 +43,7 @@
         <entry key="app/src/main/res/layout/fragment_identify.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.29393115942028986" />
+        <entry key="app/src/main/res/layout/fragment_results.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/fragment_update_account.xml" value="0.335" />
         <entry key="app/src/main/res/layout/home/layout/home_row.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/home_row.xml" value="0.3645833333333333" />
