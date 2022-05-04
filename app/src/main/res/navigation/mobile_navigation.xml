@@ -71,7 +71,9 @@
         tools:layout="@layout/fragment_results">
         <action
             android:id="@+id/action_results_to_navigation_learn"
-            app:destination="@id/navigation_learn" />
+            app:destination="@id/navigation_learn"
+            app:popUpTo="@id/navigation_calculate"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_navigation_results_to_navigation_calculate"
             app:destination="@id/navigation_calculate"
