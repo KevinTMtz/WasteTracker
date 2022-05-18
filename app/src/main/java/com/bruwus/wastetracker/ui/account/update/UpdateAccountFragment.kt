@@ -87,15 +87,15 @@ class UpdateAccountFragment : Fragment() {
                                     findNavController().popBackStack()
                                 }
                                 .addOnFailureListener {
-                                    makeToast(requireActivity(), "Error updating name", Toast.LENGTH_SHORT)
+                                    makeToast(requireActivity(), it.message.toString(), Toast.LENGTH_SHORT)
                                 }
                         }
                         .addOnFailureListener {
-                            makeToast(requireActivity(), "Error updating account", Toast.LENGTH_SHORT)
+                            makeToast(requireActivity(), it.message.toString(), Toast.LENGTH_SHORT)
                         }
                 }
                 .addOnFailureListener {
-                    makeToast(requireActivity(), "Error authenticating account", Toast.LENGTH_SHORT)
+                    makeToast(requireActivity(), it.message.toString(), Toast.LENGTH_SHORT)
                 }
         }
     }
@@ -124,11 +124,11 @@ class UpdateAccountFragment : Fragment() {
                             activity?.let { exitMainActivity(it) }
                         }
                         .addOnFailureListener {
-                            makeToast(requireActivity(), "Error deleting account", Toast.LENGTH_SHORT)
+                            makeToast(requireActivity(), it.message.toString(), Toast.LENGTH_SHORT)
                         }
                 }
                 .addOnFailureListener {
-                    makeToast(requireActivity(), "Error authenticating account", Toast.LENGTH_SHORT)
+                    makeToast(requireActivity(), it.message.toString(), Toast.LENGTH_SHORT)
                 }
         }
     }

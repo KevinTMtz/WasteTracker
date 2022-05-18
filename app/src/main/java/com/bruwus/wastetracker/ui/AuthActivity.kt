@@ -64,17 +64,19 @@ class AuthActivity : AppCompatActivity() {
                     displayName = name
                 }
 
-                Firebase.auth.currentUser?.updateProfile(profileUpdates)
-                    ?.addOnSuccessListener {
-                        makeToast(this, "Signed up", Toast.LENGTH_SHORT)
-                        goToMainActivity(this)
-                    }
-                    ?.addOnFailureListener {
-                        makeToast(this, "Error signing up", Toast.LENGTH_SHORT)
-                    }
+                Firebase.auth.currentUser?.let { user ->
+                    user.updateProfile(profileUpdates)
+                        .addOnSuccessListener {
+                            makeToast(this, "Signed up", Toast.LENGTH_SHORT)
+                            goToMainActivity(this)
+                        }
+                        .addOnFailureListener {
+                            makeToast(this, it.message.toString(), Toast.LENGTH_SHORT)
+                        }
+                }
             }
             .addOnFailureListener {
-                makeToast(this, "Error signing up", Toast.LENGTH_SHORT)
+                makeToast(this, it.message.toString(), Toast.LENGTH_SHORT)
             }
     }
 
@@ -93,7 +95,7 @@ class AuthActivity : AppCompatActivity() {
                 goToMainActivity(this)
             }
             .addOnFailureListener {
-                makeToast(this, "Error Logging in", Toast.LENGTH_SHORT)
+                makeToast(this, it.message.toString(), Toast.LENGTH_SHORT)
             }
     }
 
