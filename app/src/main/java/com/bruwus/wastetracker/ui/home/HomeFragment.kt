@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bruwus.wastetracker.databinding.FragmentHomeBinding
 import com.bruwus.wastetracker.ui.home.adapter.HomeAdapter
 import com.bruwus.wastetracker.ui.home.browser.InAppBrowser
+import com.bruwus.wastetracker.utils.general.makeToast
 
 
 class HomeFragment : Fragment() {
@@ -41,7 +42,7 @@ class HomeFragment : Fragment() {
                 adapter.setArticles(articles)
                 adapter.notifyDataSetChanged()
             } else {
-                Toast.makeText(binding.root.context, "No news found.", Toast.LENGTH_LONG).show()
+                makeToast(requireActivity(), "No news found.", Toast.LENGTH_LONG)
             }
         }
 
