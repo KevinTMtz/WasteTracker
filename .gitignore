@@ -17,3 +17,6 @@ local.properties
 
 # Google Services (e.g. APIs or Firebase)
 google-services.json
+
+# Secrets
+app/secrets.properties

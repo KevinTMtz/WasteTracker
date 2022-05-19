@@ -1,4 +1,4 @@
-package com.bruwus.wastetracker.ui.home
+package com.bruwus.wastetracker.ui.home.browser
 
 import android.content.BroadcastReceiver
 import android.content.Context
