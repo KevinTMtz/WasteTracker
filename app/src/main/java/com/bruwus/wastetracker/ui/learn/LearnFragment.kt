@@ -24,13 +24,13 @@ class LearnFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLearnBinding.inflate(inflater, container, false)
 
         viewModel = ViewModelProvider(this)[LearnViewModel::class.java]
 
         val fragment1 = HorizontalRecyclerViewFragment("Types of waste")
-        val fragment2 = HorizontalRecyclerViewFragment("Recycle")
+        val fragment2 = HorizontalRecyclerViewFragment("Recycle tips")
         val fragment3 = HorizontalRecyclerViewFragment("Print 3D tools")
 
         activity?.supportFragmentManager?.commit {

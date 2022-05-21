@@ -1,5 +1,6 @@
 package com.bruwus.wastetracker.ui.learn.data
 
 data class WasteType (
-    val category: String? = ""
+    // TODO: Add corresponding attributes
+    val toDo: String? = ""
 ): RecyclerViewData()

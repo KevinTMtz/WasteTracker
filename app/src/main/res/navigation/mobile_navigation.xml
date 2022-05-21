@@ -63,6 +63,8 @@
             android:id="@+id/action_navigation_information_to_navigation_learn"
             app:destination="@id/navigation_learn"
             app:popUpTo="@id/navigation_learn" />
+        <argument android:name="data"
+            app:argType="com.bruwus.wastetracker.ui.learn.data.RecyclerViewData" />
     </fragment>
     <fragment
         android:id="@+id/navigation_results"
