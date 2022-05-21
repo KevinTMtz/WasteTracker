@@ -20,7 +20,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/cell_column_image"
                 android:layout_width="160dp"
                 android:layout_height="130dp"
                 android:scaleType="centerCrop"
@@ -32,7 +32,7 @@
             <TextView
                 android:id="@+id/cell_column_title"
                 android:layout_width="0dp"
-                android:layout_height="16dp"
+                android:layout_height="18dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="16dp"
@@ -40,7 +40,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/cell_column_image" />
 
             <TextView
                 android:id="@+id/cell_column_description"
@@ -50,6 +50,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:ellipsize="end"
                 android:text="Description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

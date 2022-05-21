@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.learn.HorizontalRecyclerViewFragment" >
+    tools:context=".ui.learn.recyclerview.HorizontalRecyclerViewFragment" >
 
     <TextView
         android:id="@+id/section_title_text_view"
@@ -22,7 +22,7 @@
         android:id="@+id/recycler_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
