@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentCalculateBinding
+import com.bruwus.wastetracker.ui.calculate.questions.QuestionFragment
 import com.bruwus.wastetracker.ui.calculate.questions.RadioQuestionFragment
 import com.bruwus.wastetracker.ui.calculate.questions.SliderQuestionFragment
 
@@ -17,10 +19,10 @@ class CalculateFragment : Fragment() {
     private val binding get() = _binding!!
 
     // TODO: Delete and replace for db questions
-    private var questions = listOf(
+    private var questions = listOf<QuestionFragment>(
         SliderQuestionFragment(1, "How often do you recycle?"),
         RadioQuestionFragment(2, "Do you own an electric car?"),
-        SliderQuestionFragment(3, "How often do you reuse?")
+        SliderQuestionFragment(3, "How often do you reuse?", 5.0)
     )
     private var i = 0
 
@@ -55,6 +57,7 @@ class CalculateFragment : Fragment() {
             checkIfShowBackButton(i)
 
             if (i == questions.size) {
+                Toast.makeText(context, "${questions[2].getScore()}", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_navigation_calculate_to_resultsFragment)
             } else {
                 activity?.supportFragmentManager?.commit {

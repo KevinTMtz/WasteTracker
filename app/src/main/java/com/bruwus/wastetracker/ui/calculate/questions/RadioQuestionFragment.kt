@@ -5,10 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
-import androidx.fragment.app.Fragment
 import com.bruwus.wastetracker.databinding.FragmentRadioQuestionBinding
 
-class RadioQuestionFragment(private val number: Int, private val question: String) : Fragment() {
+class RadioQuestionFragment(private val number: Int,
+                            private val question: String,
+                            private var multiplicator: Double = 1.0) : QuestionFragment(number,question,multiplicator) {
 
     private lateinit var binding: FragmentRadioQuestionBinding
 
@@ -24,10 +25,9 @@ class RadioQuestionFragment(private val number: Int, private val question: Strin
 
         binding.questionNumber.text = "Question #${number}"
         binding.questionText.text = question
-        // TODO: Add radio buttons programmatically
         binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
             val checked = group.findViewById<RadioButton>(checkedId)
-            // TODO: Find a way to have a value and text properties for radio button
+            answer = checked.getTag().toString().toDouble()
         }
 
         return binding.root

@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.bruwus.wastetracker.databinding.FragmentSliderQuestionBinding
 
-class SliderQuestionFragment(private val number: Int, private val question: String) : Fragment() {
+class SliderQuestionFragment(private val number: Int,
+                             private val question: String,
+                             private var multiplicator: Double = 1.0) : QuestionFragment(number,question,multiplicator) {
 
     private lateinit var binding: FragmentSliderQuestionBinding
-    private var answer: Double? = null
-    // TODO: Define a better dict of labels
+
     private val labels = mapOf(
         0 to "Never",
         1 to "Hardly ever",

@@ -70,12 +70,14 @@
                     android:id="@+id/radio_button_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:tag="1"
                     android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/radio_button_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:tag="0"
                     android:text="No" />
             </RadioGroup>
 
