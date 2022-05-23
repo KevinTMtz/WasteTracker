@@ -18,7 +18,6 @@ class CalculateFragment : Fragment() {
     private var _binding: FragmentCalculateBinding? = null
     private val binding get() = _binding!!
 
-    // TODO: Delete and replace for db questions
     private var questions = listOf<QuestionFragment>(
         SliderQuestionFragment(1, "How often do you recycle?"),
         RadioQuestionFragment(2, "Do you own an electric car?"),
@@ -34,40 +33,67 @@ class CalculateFragment : Fragment() {
 
         activity?.supportFragmentManager?.commit {
             i = 0
-            replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i+1}")
+            replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i + 1}")
             setReorderingAllowed(true)
         }
 
         binding.backButton.setOnClickListener {
-            if (i > 0) {
-                i--
-
-                checkIfShowBackButton(i)
-
-                activity?.supportFragmentManager?.commit {
-                    replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i + 1}")
-                    setReorderingAllowed(true)
-                }
-            }
+            getPrevQuestion()
         }
 
         binding.nextButton.setOnClickListener {
-            i++
-
-            checkIfShowBackButton(i)
-
-            if (i == questions.size) {
-                Toast.makeText(context, "${questions[2].getScore()}", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_navigation_calculate_to_resultsFragment)
-            } else {
-                activity?.supportFragmentManager?.commit {
-                    replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i + 1}")
-                    setReorderingAllowed(true)
-                }
-            }
+            getNextQuestion()
         }
 
         return binding.root
+    }
+
+    private fun getResults() {
+        val score = questions.sumOf { it.getScore() }
+        // TODO: send score to next fragment
+        findNavController().navigate(R.id.action_navigation_calculate_to_resultsFragment)
+    }
+
+    private fun getPrevQuestion() {
+        if (i > 0) {
+            i--
+
+            checkIfShowBackButton(i)
+
+            activity?.supportFragmentManager?.commit {
+                replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i + 1}")
+                setReorderingAllowed(true)
+            }
+        }
+    }
+
+    private fun getNextQuestion() {
+
+        checkIfShowBackButton(i + 1)
+
+        if (i == questions.size - 1) {
+            getResults()
+            return
+        }
+
+        if (questions[i].isAnswered()) {
+            i++
+            activity?.supportFragmentManager?.commit {
+                replace(
+                    R.id.calculate_linear_layout,
+                    questions[i],
+                    "fragment_question_${i + 1}"
+                )
+                setReorderingAllowed(true)
+            }
+        } else {
+            Toast.makeText(
+                context,
+                "Please, answer the question before continuing",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
     }
 
     private fun checkIfShowBackButton(pos: Int) {

@@ -9,7 +9,7 @@ import com.bruwus.wastetracker.databinding.FragmentRadioQuestionBinding
 
 class RadioQuestionFragment(private val number: Int,
                             private val question: String,
-                            private var multiplicator: Double = 1.0) : QuestionFragment(number,question,multiplicator) {
+                            multiplicator: Double = 1.0) : QuestionFragment(multiplicator) {
 
     private lateinit var binding: FragmentRadioQuestionBinding
 
