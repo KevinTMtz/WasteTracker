@@ -16,6 +16,7 @@ import com.bruwus.wastetracker.ui.calculate.questions.NumberQuestionFragment
 import com.bruwus.wastetracker.ui.calculate.questions.QuestionFragment
 import com.bruwus.wastetracker.ui.calculate.questions.RadioQuestionFragment
 import com.bruwus.wastetracker.ui.calculate.questions.SliderQuestionFragment
+import com.bruwus.wastetracker.utils.general.makeToast
 
 class CalculateFragment : Fragment() {
     private var _binding: FragmentCalculateBinding? = null
@@ -75,11 +76,11 @@ class CalculateFragment : Fragment() {
     private fun getNextQuestion() {
 
         if (!questions[i].isAnswered()) {
-            Toast.makeText(
-                context,
+            makeToast(
+                requireActivity(),
                 "Please, answer the question before continuing",
                 Toast.LENGTH_SHORT
-            ).show()
+            )
             return
         }
 
