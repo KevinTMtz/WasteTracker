@@ -1,26 +1,25 @@
 package com.bruwus.wastetracker.ui.calculate.questions
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
+import androidx.core.widget.doOnTextChanged
+import com.bruwus.wastetracker.R
+import com.bruwus.wastetracker.databinding.FragmentNumberQuestionBinding
 import com.bruwus.wastetracker.databinding.FragmentSliderQuestionBinding
 
-class SliderQuestionFragment(
+class NumberQuestionFragment(
     private val number: Int,
     private val question: String,
     multiplicator: Double = 1.0
 ) : QuestionFragment(multiplicator) {
 
-    private lateinit var binding: FragmentSliderQuestionBinding
-
-    private val labels = mapOf(
-        0 to "Never",
-        1 to "Hardly ever",
-        2 to "Sometimes",
-        3 to "Often",
-        4 to "Usually",
-    )
+    private lateinit var binding: FragmentNumberQuestionBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,19 +29,16 @@ class SliderQuestionFragment(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSliderQuestionBinding.inflate(inflater, container, false)
+        binding = FragmentNumberQuestionBinding.inflate(inflater, container, false)
 
         binding.questionNumber.text = "Question #${number}"
         binding.questionText.text = question
-        answer = binding.slider.value.toDouble()
 
-        binding.slider.addOnChangeListener { slider, value, fromUser ->
-            answer = value.toDouble()
-        }
-        binding.slider.setLabelFormatter{ value: Float ->
-            return@setLabelFormatter "${labels[value.toInt()]}"
+        binding.numberInput.doOnTextChanged { text, _, _, _ ->
+            answer = text.toString().toDouble()
         }
 
         return binding.root
     }
+
 }

@@ -80,5 +80,8 @@
             android:id="@+id/action_navigation_results_to_navigation_calculate"
             app:destination="@id/navigation_calculate"
             app:popUpTo="@id/navigation_calculate" />
+        <argument
+            android:name="data"
+            app:argType="com.bruwus.wastetracker.ui.calculate.data.CalculatorData" />
     </fragment>
 </navigation>
