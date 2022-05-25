@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import com.bruwus.wastetracker.databinding.FragmentRadioQuestionBinding
 
-class RadioQuestionFragment(private val number: Int,
-                            private val question: String,
-                            multiplicator: Double = 1.0) : QuestionFragment(multiplicator) {
+class RadioQuestionFragment(
+    private val number: Int,
+    private val question: String,
+    multiplicator: Double = 1.0
+) : QuestionFragment(multiplicator) {
 
     private lateinit var binding: FragmentRadioQuestionBinding
 

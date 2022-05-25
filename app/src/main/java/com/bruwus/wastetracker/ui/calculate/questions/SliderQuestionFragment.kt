@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.bruwus.wastetracker.databinding.FragmentSliderQuestionBinding
 
-class SliderQuestionFragment(private val number: Int,
-                             private val question: String,
-                             multiplicator: Double = 1.0) : QuestionFragment(multiplicator) {
+class SliderQuestionFragment(
+    private val number: Int,
+    private val question: String,
+    multiplicator: Double = 1.0
+) : QuestionFragment(multiplicator) {
 
     private lateinit var binding: FragmentSliderQuestionBinding
 
