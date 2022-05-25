@@ -15,10 +15,16 @@ class ResultsFragment : Fragment() {
     private var _binding: FragmentResultsBinding? = null
     private val binding get() = _binding!!
 
-    private val resultMap = mapOf(
-        1 to "Less than average",
-        2 to "Average",
-        3 to "More than Average"
+    private val consumerType = mapOf(
+        0 to "Less than average",
+        1 to "Average",
+        2 to "More than Average"
+    )
+
+    private val advices = mapOf(
+        0 to "Some advices for this type of consumer (Below avg)",
+        1 to "Some advices for this type of consumer (Avg)",
+        2 to "Some advices for this type of consumer (More than avg)"
     )
 
     override fun onCreateView(
@@ -29,7 +35,9 @@ class ResultsFragment : Fragment() {
 
         val data = arguments?.getSerializable("data") as CalculatorData
 
-        binding.resultText.text = "${data.result}"
+        binding.resultText.text = "${data.result} kg"
+        binding.imageDescription.text = consumerType[data.consumerType]
+        binding.resultAdvice.text = advices[data.consumerType]
 
         binding.learnButton.setOnClickListener {
             findNavController().navigate(R.id.action_results_to_navigation_learn)
