@@ -4,39 +4,35 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentSliderQuestionBinding
 
 class SliderQuestionFragment(
     private val number: Int,
     private val question: String,
-    multiplicator: Double = 1.0
-) : QuestionFragment(multiplicator) {
-
+    multiplier: Double = 1.0
+) : QuestionFragment(multiplier) {
     private lateinit var binding: FragmentSliderQuestionBinding
-
-    private val labels = mapOf(
-        0 to "Never",
-        1 to "Hardly ever",
-        2 to "Sometimes",
-        3 to "Often",
-        4 to "Usually",
-    )
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        val labels = mapOf(
+            0 to getString(R.string.calculate_likert_never),
+            1 to getString(R.string.calculate_likert_hardly_never),
+            2 to getString(R.string.calculate_likert_sometimes),
+            3 to getString(R.string.calculate_likert_often),
+            4 to getString(R.string.calculate_likert_usually),
+        )
+
         binding = FragmentSliderQuestionBinding.inflate(inflater, container, false)
 
-        binding.questionNumber.text = "Question #${number}"
+        binding.questionNumber.text = getString(R.string.calculate_question_num, "#", number)
         binding.questionText.text = question
         answer = binding.slider.value.toDouble()
 
-        binding.slider.addOnChangeListener { slider, value, fromUser ->
+        binding.slider.addOnChangeListener { _, value, _ ->
             answer = value.toDouble()
         }
         binding.slider.setLabelFormatter{ value: Float ->

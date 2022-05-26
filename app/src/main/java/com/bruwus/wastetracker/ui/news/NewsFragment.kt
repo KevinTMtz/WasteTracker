@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentHomeBinding
 import com.bruwus.wastetracker.ui.news.adapter.NewsAdapter
 import com.bruwus.wastetracker.ui.utils.browser.InAppBrowser
@@ -33,16 +34,16 @@ class NewsFragment : Fragment() {
         viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
         adapter = NewsAdapter(listOf())
 
-        val homeRecyclerView : RecyclerView = binding.homeRecyclerView
-        homeRecyclerView.layoutManager = LinearLayoutManager(activity)
-        homeRecyclerView.adapter = adapter
+        val newsRecyclerView : RecyclerView = binding.newsRecyclerView
+        newsRecyclerView.layoutManager = LinearLayoutManager(activity)
+        newsRecyclerView.adapter = adapter
 
         viewModel.articles.observe(viewLifecycleOwner) { articles ->
             if (articles.isNotEmpty()) {
                 adapter.setArticles(articles)
                 adapter.notifyDataSetChanged()
             } else {
-                makeToast(requireActivity(), "No news found", Toast.LENGTH_LONG)
+                makeToast(requireActivity(), getString(R.string.news_no_data_found), Toast.LENGTH_LONG)
             }
         }
 

@@ -15,27 +15,27 @@ class ResultsFragment : Fragment() {
     private var _binding: FragmentResultsBinding? = null
     private val binding get() = _binding!!
 
-    private val consumerType = mapOf(
-        0 to "Less than average",
-        1 to "Average",
-        2 to "More than Average"
-    )
-
-    private val advices = mapOf(
-        0 to "Some advices for this type of consumer (Below avg)",
-        1 to "Some advices for this type of consumer (Avg)",
-        2 to "Some advices for this type of consumer (More than avg)"
-    )
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        val consumerType = mapOf(
+            0 to getString(R.string.results_less_than),
+            1 to getString(R.string.results_average),
+            2 to getString(R.string.results_more_than_average)
+        )
+
+        val advices = mapOf(
+            0 to getString(R.string.results_advice_less_than),
+            1 to getString(R.string.results_advice_average),
+            2 to getString(R.string.results_advice_more_than_average)
+        )
+
         _binding = FragmentResultsBinding.inflate(inflater, container, false)
 
         val data = arguments?.getSerializable("data") as CalculatorData
 
-        binding.resultText.text = "${data.result} kg"
+        binding.resultText.text = getString(R.string.results_kilograms, data.result)
         binding.imageDescription.text = consumerType[data.consumerType]
         binding.resultAdvice.text = advices[data.consumerType]
 

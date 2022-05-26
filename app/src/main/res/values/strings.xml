@@ -1,21 +1,124 @@
 <resources>
-    <string name="app_name">Waste Tracker</string>
-    <string name="title_activity_main_layout">MainLayout</string>
-    <string name="title_news">News</string>
+    <string name="app_name" translatable="false">Waste Tracker</string>
 
+    // Landing page
+    <string name="landing_page_message">Keep track of your waste, identify its different types and reduce it!</string>
+    <string name="landing_page_button_login">Login or sign up</string>
+
+    // Auth
+    <string name="auth_sign_up">Sign up</string>
+    <string name="auth_login">Login</string>
+
+    <string name="auth_name">Name</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_confirm_password">Confirm password</string>
+
+    <string name="auth_change_to_login">Already have an account? Login</string>
+    <string name="auth_change_to_sign_up">Don\'t have an account yet? Sign up</string>
+
+    <string name="auth_success_sign_up">Signed up</string>
+    <string name="auth_success_login">Logged in</string>
+
+    // News
+    <string name="title_news">News</string>
+    <string name="news_no_data_found">No news found</string>
+
+    // Calculate
     <string name="title_calculate">Calculate</string>
+    <string name="calculate_question_num">Question %s%d</string>
+
+    <string name="calculate_likert_never">Never</string>
+    <string name="calculate_likert_hardly_never">Hardly ever</string>
+    <string name="calculate_likert_sometimes">Sometimes</string>
+    <string name="calculate_likert_often">Often</string>
+    <string name="calculate_likert_usually">Usually</string>
+
+    <string name="calculate_question_1">How often do you recycle?</string>
+    <string name="calculate_question_2">Do you own an electric car?</string>
+    <string name="calculate_question_3">How often do you reuse?</string>
+    <string name="calculate_question_4">How many km do you travel by car</string>
+
+    <string name="calculate_validate_question">Please, answer the question before continuing</string>
+
+    <string name="calculate_question_radio_yes">Yes</string>
+    <string name="calculate_question_radio_no" translatable="false">No</string>
+
+    <string name="calculate_question_back_button">Back</string>
+    <string name="calculate_question_next_button">Next</string>
+
+    <string name="calculate_question_number_word">Number</string>
+
+    // Calculate results
     <string name="title_results">Results</string>
 
+    <string name="results_title_annual_waste">Your annual waste is:</string>
+    <string name="results_kilograms" translatable="false">%.0fkg</string>
+
+    <string name="results_less_than">Less than average</string>
+    <string name="results_average">Average</string>
+    <string name="results_more_than_average">More than Average</string>
+
+    <string name="results_advice_less_than">Some advices for this type of consumer (Below avg)</string>
+    <string name="results_advice_average">Some advices for this type of consumer (Avg)</string>
+    <string name="results_advice_more_than_average">Some advices for this type of consumer (More than avg)</string>
+
+    <string name="results_learn_more_button">Learn what to do</string>
+
+    // Identify
     <string name="title_identify">Identify</string>
 
+    <string name="identify_take_photo">Take a photo</string>
+
+    <string name="identify_certainty">Certainty: %.2f%%</string>
+
+    <string name="identify_start_again_button">Start again</string>
+    <string name="identify_learn_more_button">Learn more</string>
+
+    <string name="identify_error_identifying">Error identifying waste type</string>
+    <string name="identify_error_upload_photo">Failed to upload photo</string>
+
+    // Learn
     <string name="title_learn">Learn</string>
+
+    <string name="learn_types_of_waste">Types of waste</string>
+    <string name="learn_recycle_tips">Recycle tips</string>
+    <string name="learn_print_3d">Print 3D tools</string>
+
+    <string name="learn_no_waste_types_found">No waste types found</string>
+    <string name="learn_no_recycle_tips_found">No recycle tips found</string>
+    <string name="learn_no_3d_tools_found">No 3D tools founds</string>
+
+    // Information
     <string name="title_information">Know more</string>
 
+    <string name="information_waste_type">Waste type</string>
+    <string name="information_recycle_tip">Recycle tip</string>
+    <string name="information_3d_tool">3D tool</string>
+
+    <string name="information_check_3d_tool_button">Check 3D model</string>
+
+    // Account
     <string name="title_account">Account</string>
+
+    <string name="account_update_account_info_button">Update my account</string>
+    <string name="account_logout_button">Logout</string>
+
+    // Update account
     <string name="title_update_account">Update Account</string>
 
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="update_account_button">Update account</string>
+    <string name="update_account_delete_button">Delete account</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="update_account_updated">Updated account</string>
+    <string name="update_account_deleted">Deleted account</string>
+
+    // Utils
+    <string name="utils_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="utils_loading">Loading…</string>
+
+    // Validation
+    <string name="validation_input_all_information">Input all information</string>
+    <string name="validation_input_password">Enter your password</string>
+    <string name="validation_passwords_not_match">Passwords do not match</string>
 </resources>

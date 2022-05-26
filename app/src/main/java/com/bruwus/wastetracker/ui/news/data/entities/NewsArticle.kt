@@ -8,5 +8,5 @@ data class NewsArticle(
     @SerializedName("title") var title: String,
     @SerializedName("description") var description: String,
     @SerializedName("url") var url: String,
-    @SerializedName("urlToImage") var urlToImage: String,
+    @SerializedName("urlToImage") var urlToImage: String?,
 )

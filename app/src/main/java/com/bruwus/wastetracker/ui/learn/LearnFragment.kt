@@ -29,9 +29,9 @@ class LearnFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[LearnViewModel::class.java]
 
-        val fragment1 = HorizontalRecyclerViewFragment("Types of waste")
-        val fragment2 = HorizontalRecyclerViewFragment("Recycle tips")
-        val fragment3 = HorizontalRecyclerViewFragment("Print 3D tools")
+        val fragment1 = HorizontalRecyclerViewFragment(getString(R.string.learn_types_of_waste))
+        val fragment2 = HorizontalRecyclerViewFragment(getString(R.string.learn_recycle_tips))
+        val fragment3 = HorizontalRecyclerViewFragment(getString(R.string.learn_print_3d))
 
         activity?.supportFragmentManager?.commit {
             add(R.id.linear_layout, fragment1, "fragment_1")
@@ -49,7 +49,7 @@ class LearnFragment : Fragment() {
                     remove(fragment1)
                     setReorderingAllowed(true)
                 }
-                makeToast(requireActivity(), "No waste types found", Toast.LENGTH_LONG)
+                makeToast(requireActivity(), getString(R.string.learn_no_waste_types_found), Toast.LENGTH_LONG)
             }
         }
 
@@ -62,7 +62,7 @@ class LearnFragment : Fragment() {
                     remove(fragment2)
                     setReorderingAllowed(true)
                 }
-                makeToast(requireActivity(), "No recycle tips found", Toast.LENGTH_LONG)
+                makeToast(requireActivity(), getString(R.string.learn_no_recycle_tips_found), Toast.LENGTH_LONG)
             }
         }
 
@@ -75,7 +75,7 @@ class LearnFragment : Fragment() {
                     remove(fragment3)
                     setReorderingAllowed(true)
                 }
-                makeToast(requireActivity(), "No 3D tools founds", Toast.LENGTH_LONG)
+                makeToast(requireActivity(), getString(R.string.learn_no_3d_tools_found), Toast.LENGTH_LONG)
             }
         }
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentUpdateAccountBinding
 import com.bruwus.wastetracker.utils.general.makeToast
 import com.bruwus.wastetracker.utils.navigation.exitMainActivity
@@ -58,17 +59,17 @@ class UpdateAccountFragment : Fragment() {
         val confirmPassword = binding.updateConfirmPasswordText.text.toString()
 
         if (name.isEmpty() || email.isEmpty()) {
-            makeToast(requireActivity(), "Input all information", Toast.LENGTH_SHORT)
+            makeToast(requireActivity(), getString(R.string.validation_input_all_information), Toast.LENGTH_SHORT)
             return
         }
 
         if (password.isEmpty() || confirmPassword.isEmpty()) {
-            makeToast(requireActivity(), "Enter your password", Toast.LENGTH_SHORT)
+            makeToast(requireActivity(), getString(R.string.validation_input_password), Toast.LENGTH_SHORT)
             return
         }
 
         if (password != confirmPassword) {
-            makeToast(requireActivity(), "Passwords do not match", Toast.LENGTH_SHORT)
+            makeToast(requireActivity(), getString(R.string.validation_passwords_not_match), Toast.LENGTH_SHORT)
             return
         }
 
@@ -83,7 +84,7 @@ class UpdateAccountFragment : Fragment() {
 
                             user.updateProfile(profileUpdates)
                                 .addOnSuccessListener {
-                                    makeToast(requireActivity(), "Updated account", Toast.LENGTH_SHORT)
+                                    makeToast(requireActivity(), getString(R.string.update_account_updated), Toast.LENGTH_SHORT)
                                     findNavController().popBackStack()
                                 }
                                 .addOnFailureListener {
@@ -105,12 +106,12 @@ class UpdateAccountFragment : Fragment() {
         val confirmPassword = binding.updateConfirmPasswordText.text.toString()
 
         if (password.isEmpty() || confirmPassword.isEmpty()) {
-            makeToast(requireActivity(), "Enter your password", Toast.LENGTH_SHORT)
+            makeToast(requireActivity(), getString(R.string.validation_input_password), Toast.LENGTH_SHORT)
             return
         }
 
         if (password != confirmPassword) {
-            makeToast(requireActivity(), "Passwords do not match", Toast.LENGTH_SHORT)
+            makeToast(requireActivity(), getString(R.string.validation_passwords_not_match), Toast.LENGTH_SHORT)
             return
         }
 
@@ -119,7 +120,7 @@ class UpdateAccountFragment : Fragment() {
                 .addOnSuccessListener {
                     user.delete()
                         .addOnSuccessListener {
-                            makeToast(requireActivity(), "Deleted account", Toast.LENGTH_SHORT)
+                            makeToast(requireActivity(), getString(R.string.update_account_deleted), Toast.LENGTH_SHORT)
 
                             activity?.let { exitMainActivity(it) }
                         }

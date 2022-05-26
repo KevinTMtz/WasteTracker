@@ -22,18 +22,20 @@ class CalculateFragment : Fragment() {
     private var _binding: FragmentCalculateBinding? = null
     private val binding get() = _binding!!
 
-    private var questions = listOf<QuestionFragment>(
-        SliderQuestionFragment(1, "How often do you recycle?"),
-        RadioQuestionFragment(2, "Do you own an electric car?"),
-        SliderQuestionFragment(3, "How often do you reuse?", 5.0),
-        NumberQuestionFragment(4, "How many km do you travel by car", 15.0)
-    )
+    private lateinit var questions: List<QuestionFragment>
     private var i = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        questions = listOf(
+            SliderQuestionFragment(1, getString(R.string.calculate_question_1)),
+            RadioQuestionFragment(2, getString(R.string.calculate_question_2)),
+            SliderQuestionFragment(3, getString(R.string.calculate_question_3), 5.0),
+            NumberQuestionFragment(4, getString(R.string.calculate_question_4), 15.0)
+        )
+
         _binding = FragmentCalculateBinding.inflate(inflater, container, false)
 
         activity?.supportFragmentManager?.commit {
@@ -78,7 +80,7 @@ class CalculateFragment : Fragment() {
         if (!questions[i].isAnswered()) {
             makeToast(
                 requireActivity(),
-                "Please, answer the question before continuing",
+                getString(R.string.calculate_validate_question),
                 Toast.LENGTH_SHORT
             )
             return
