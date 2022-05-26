@@ -7,8 +7,8 @@ from uvicorn import run
 app = FastAPI()
 
 @app.get("/identify")
-async def root(image: str):
-    return idwaste(image, "./model/WasteClassificationModel.h5")
+async def root(image: str, locale: str):
+    return idwaste(image, locale, "./model/WasteClassificationModel.h5")
 
 if __name__ == "__main__":
 	port = int(os.environ.get('PORT', 8000))

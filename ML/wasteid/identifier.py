@@ -6,7 +6,7 @@ from urllib import request
 from io import BytesIO
 from waste import CLASSES
 
-def idwaste(url: str, modelpath: str):
+def idwaste(url: str, locale: str, modelpath: str):
     model = keras.models.load_model(modelpath)
 
     res = request.urlopen(url).read()
@@ -15,6 +15,6 @@ def idwaste(url: str, modelpath: str):
     img_array = expand_dims(img_array, 0)
     predictions = model.predict(img_array)
 
-    class_type = CLASSES[argmax(predictions)]
+    class_type = CLASSES[locale][argmax(predictions)]
     class_type["certainty"] = predictions[0][argmax(predictions)]*100
     return class_type
