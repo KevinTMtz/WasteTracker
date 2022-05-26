@@ -10,6 +10,7 @@ import com.bruwus.wastetracker.ui.learn.data.WasteType
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import java.util.*
 
 class LearnViewModel : ViewModel() {
     private val databaseReference = Firebase.firestore
@@ -23,6 +24,8 @@ class LearnViewModel : ViewModel() {
     private val _tools3D = MutableLiveData<List<Tool3D>>()
     val tools3D: LiveData<List<Tool3D>> get() = _tools3D
 
+    private val locale = Locale.getDefault().language
+
     fun initViewModel() {
         fetchWasteTypes()
         fetchRecycleTips()
@@ -30,7 +33,7 @@ class LearnViewModel : ViewModel() {
     }
 
     private fun fetchWasteTypes() {
-        databaseReference.collection("wasteType").get()
+        databaseReference.collection("wasteType/language/${locale}").get()
             .addOnSuccessListener { snapshot ->
                 val wasteTypeList = mutableListOf<WasteType>()
 
@@ -46,7 +49,7 @@ class LearnViewModel : ViewModel() {
     }
 
     private fun fetchRecycleTips() {
-        databaseReference.collection("recycleTip").get()
+        databaseReference.collection("recycleTip/language/${locale}").get()
             .addOnSuccessListener { snapshot ->
                 val recycleTipList = mutableListOf<RecycleTip>()
 
@@ -62,7 +65,7 @@ class LearnViewModel : ViewModel() {
     }
 
     private fun fetchTools3D() {
-        databaseReference.collection("tool3D").get()
+        databaseReference.collection("tool3D/language/${locale}").get()
             .addOnSuccessListener { snapshot ->
                 val tool3DList = mutableListOf<Tool3D>()
 
