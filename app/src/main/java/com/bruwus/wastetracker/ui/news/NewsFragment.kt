@@ -1,5 +1,6 @@
 package com.bruwus.wastetracker.ui.news
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,7 @@ class NewsFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
         adapter = NewsAdapter(listOf())

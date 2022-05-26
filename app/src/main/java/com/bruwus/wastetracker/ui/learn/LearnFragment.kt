@@ -1,5 +1,6 @@
 package com.bruwus.wastetracker.ui.learn
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,7 @@ class LearnFragment : Fragment() {
 
     private lateinit var viewModel: LearnViewModel
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

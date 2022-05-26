@@ -60,6 +60,7 @@
                 android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:hint="@string/calculate_question_number_word"
+                android:autofillHints="number"
                 android:inputType="numberDecimal"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
