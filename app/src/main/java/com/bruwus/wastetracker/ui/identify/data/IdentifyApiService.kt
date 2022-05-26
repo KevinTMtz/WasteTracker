@@ -7,6 +7,7 @@ import retrofit2.http.Query
 interface IdentifyApiService {
     @GET("identify")
     suspend fun getWasteIdentification(
+        @Query("locale") locale: String,
         @Query("image") image: String,
     ): IdentifyWasteResult
 }
