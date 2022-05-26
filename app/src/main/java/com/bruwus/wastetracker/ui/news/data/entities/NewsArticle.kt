@@ -1,4 +1,4 @@
-package com.bruwus.wastetracker.ui.home.data.entities
+package com.bruwus.wastetracker.ui.news.data.entities
 
 import com.google.gson.annotations.SerializedName
 

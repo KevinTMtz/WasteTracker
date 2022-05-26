@@ -1,7 +1,7 @@
-package com.bruwus.wastetracker.ui.home.data
+package com.bruwus.wastetracker.ui.news.data
 
 import com.bruwus.wastetracker.BuildConfig
-import com.bruwus.wastetracker.ui.home.data.entities.NewsArticle
+import com.bruwus.wastetracker.ui.news.data.entities.NewsArticle
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.Retrofit

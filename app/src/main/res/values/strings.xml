@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Waste Tracker</string>
     <string name="title_activity_main_layout">MainLayout</string>
-    <string name="title_home">Home</string>
+    <string name="title_news">News</string>
 
     <string name="title_calculate">Calculate</string>
     <string name="title_results">Results</string>

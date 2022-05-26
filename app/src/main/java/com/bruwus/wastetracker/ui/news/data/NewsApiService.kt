@@ -1,6 +1,6 @@
-package com.bruwus.wastetracker.ui.home.data
+package com.bruwus.wastetracker.ui.news.data
 
-import com.bruwus.wastetracker.ui.home.data.entities.NewsResponse
+import com.bruwus.wastetracker.ui.news.data.entities.NewsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
