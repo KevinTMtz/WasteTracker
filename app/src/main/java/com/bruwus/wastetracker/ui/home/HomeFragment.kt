@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
                 adapter.setArticles(articles)
                 adapter.notifyDataSetChanged()
             } else {
-                makeToast(requireActivity(), "No news found.", Toast.LENGTH_LONG)
+                makeToast(requireActivity(), "No news found", Toast.LENGTH_LONG)
             }
         }
 

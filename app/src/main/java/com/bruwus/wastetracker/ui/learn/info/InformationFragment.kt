@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bruwus.wastetracker.databinding.FragmentInformationBinding
 import com.bruwus.wastetracker.ui.home.browser.InAppBrowser
@@ -13,7 +12,6 @@ import com.bruwus.wastetracker.ui.learn.data.RecycleTip
 import com.bruwus.wastetracker.ui.learn.data.RecyclerViewData
 import com.bruwus.wastetracker.ui.learn.data.Tool3D
 import com.bruwus.wastetracker.ui.learn.data.WasteType
-import com.bruwus.wastetracker.utils.general.makeToast
 import com.bumptech.glide.Glide
 
 class InformationFragment : Fragment() {
