@@ -1,13 +1,13 @@
-package com.bruwus.wastetracker.ui.home.adapter
+package com.bruwus.wastetracker.ui.news.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bruwus.wastetracker.R
-import com.bruwus.wastetracker.ui.home.data.entities.NewsArticle
+import com.bruwus.wastetracker.ui.news.data.entities.NewsArticle
 
-class HomeAdapter (private var articles: List<NewsArticle>): RecyclerView.Adapter<HomeViewHolder>() {
+class NewsAdapter (private var articles: List<NewsArticle>): RecyclerView.Adapter<NewsViewHolder>() {
 
     interface ClickListener{
         fun onItemClick(view: View, pos: Int)
@@ -19,13 +19,13 @@ class HomeAdapter (private var articles: List<NewsArticle>): RecyclerView.Adapte
         this.clickListener = clickListener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.home_row, parent, false)
 
-        return HomeViewHolder(view, clickListener)
+        return NewsViewHolder(view, clickListener)
     }
 
-    override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         holder.bind(articles[position])
     }
 

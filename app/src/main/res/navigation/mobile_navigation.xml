@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_news">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.bruwus.wastetracker.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:id="@+id/navigation_news"
+        android:name="com.bruwus.wastetracker.ui.news.NewsFragment"
+        android:label="@string/title_news"
         tools:layout="@layout/fragment_home" />
 
     <fragment

@@ -1,12 +1,12 @@
-package com.bruwus.wastetracker.ui.home.adapter
+package com.bruwus.wastetracker.ui.news.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bruwus.wastetracker.databinding.HomeRowBinding
-import com.bruwus.wastetracker.ui.home.data.entities.NewsArticle
+import com.bruwus.wastetracker.ui.news.data.entities.NewsArticle
 import com.bumptech.glide.Glide
 
-class HomeViewHolder(view: View, private val clickListener: HomeAdapter.ClickListener?): RecyclerView.ViewHolder(view), View.OnClickListener {
+class NewsViewHolder(view: View, private val clickListener: NewsAdapter.ClickListener?): RecyclerView.ViewHolder(view), View.OnClickListener {
     private val binding = HomeRowBinding.bind(itemView)
 
     fun bind(article: NewsArticle) {

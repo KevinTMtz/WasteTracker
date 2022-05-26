@@ -1,17 +1,17 @@
-package com.bruwus.wastetracker.ui.home
+package com.bruwus.wastetracker.ui.news
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bruwus.wastetracker.ui.home.data.NewsRepository
-import com.bruwus.wastetracker.ui.home.data.entities.NewsArticle
+import com.bruwus.wastetracker.ui.news.data.NewsRepository
+import com.bruwus.wastetracker.ui.news.data.entities.NewsArticle
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class HomeViewModel : ViewModel() {
+class NewsViewModel : ViewModel() {
 
     private val newsRepository =  NewsRepository()
     private val _articles = MutableLiveData<List<NewsArticle>>()

@@ -1,4 +1,4 @@
-package com.bruwus.wastetracker.ui.home
+package com.bruwus.wastetracker.ui.news
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,18 +10,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bruwus.wastetracker.databinding.FragmentHomeBinding
-import com.bruwus.wastetracker.ui.home.adapter.HomeAdapter
+import com.bruwus.wastetracker.ui.news.adapter.NewsAdapter
 import com.bruwus.wastetracker.ui.utils.browser.InAppBrowser
 import com.bruwus.wastetracker.utils.general.makeToast
 
 
-class HomeFragment : Fragment() {
+class NewsFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var adapter: HomeAdapter
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var adapter: NewsAdapter
+    private lateinit var viewModel: NewsViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -30,8 +30,8 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-        adapter = HomeAdapter(listOf())
+        viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
+        adapter = NewsAdapter(listOf())
 
         val homeRecyclerView : RecyclerView = binding.homeRecyclerView
         homeRecyclerView.layoutManager = LinearLayoutManager(activity)
@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
             }
         }
 
-        adapter.setOnItemClickListener(object: HomeAdapter.ClickListener {
+        adapter.setOnItemClickListener(object: NewsAdapter.ClickListener {
             override fun onItemClick(view: View, pos: Int) {
                 val url = adapter.getArticle(pos).url
                 InAppBrowser.open(binding.root.context, url)

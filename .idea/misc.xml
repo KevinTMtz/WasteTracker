@@ -27,7 +27,10 @@
         <entry key="app/src/main/res/drawable/ic_baseline_calculate_24.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/ic_baseline_help_24.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_baseline_newspaper_24.xml" value="0.28" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.27" />
+        <entry key="app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.27" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2625" />
