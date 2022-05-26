@@ -1,17 +1,11 @@
 package com.bruwus.wastetracker.ui.calculate.questions
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doOnTextChanged
-import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentNumberQuestionBinding
-import com.bruwus.wastetracker.databinding.FragmentSliderQuestionBinding
 
 class NumberQuestionFragment(
     private val number: Int,
