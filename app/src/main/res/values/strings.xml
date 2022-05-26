@@ -68,7 +68,7 @@
     // Identify
     <string name="title_identify">Identify</string>
 
-    <string name="identify_take_photo">Take a photo</string>
+    <string name="identify_take_photo">Touch to identify waste</string>
 
     <string name="identify_certainty">Certainty: %.2f%%</string>
 

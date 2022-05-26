@@ -49,7 +49,7 @@
     <string name="calculate_question_back_button">Atrás</string>
     <string name="results_title_annual_waste">Tu desecho anual es de:</string>
     <string name="results_learn_more_button">Aprende qué hacer</string>
-    <string name="identify_take_photo">Toma una foto</string>
+    <string name="identify_take_photo">Toca para identificar desperdicio</string>
     <string name="identify_error_identifying">Error identificanto el tipo de desperdicio</string>
     <string name="identify_error_upload_photo">No se pudo subir la foto</string>
     <string name="identify_start_again_button">Regresar</string>

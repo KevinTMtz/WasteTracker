@@ -58,8 +58,4 @@ class IdentifyViewModel : ViewModel() {
             onFailure()
         }
     }
-
-    fun cleanData() {
-        _wasteIdentification.postValue(null)
-    }
 }

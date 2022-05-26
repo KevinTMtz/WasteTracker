@@ -45,8 +45,8 @@ class InformationFragment : Fragment() {
                 binding.infoCategoryTextView.text = getString(R.string.information_3d_tool)
 
                 binding.infoOpenBrowserButton.setOnClickListener {
-                    data.webpageUrl?.let { it ->
-                        InAppBrowser.open(binding.root.context, it)
+                    data.webpageUrl?.let { webpageUrl ->
+                        InAppBrowser.open(binding.root.context, webpageUrl)
                     }
                 }
 

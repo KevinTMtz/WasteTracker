@@ -56,7 +56,7 @@ class IdentifyFragment : Fragment() {
                 loadingDialog.show(false)
 
                 makeToast(requireActivity(), getString(R.string.identify_error_identifying), Toast.LENGTH_SHORT)
-                cleanUIAndData()
+                cleanUI()
             }
         }
 
@@ -65,8 +65,7 @@ class IdentifyFragment : Fragment() {
         }
 
         binding.takeAnotherButton.setOnClickListener {
-            cleanUIAndData()
-            cameraIntent()
+            cleanUI()
         }
 
         loadingDialog = LoadingIndicator(requireActivity())
@@ -120,14 +119,11 @@ class IdentifyFragment : Fragment() {
         binding.identifyTakePictureTextView.visibility = View.GONE
     }
 
-    private fun cleanUIAndData() {
+    private fun cleanUI() {
         binding.takePictureButton.visibility = View.VISIBLE
         binding.identifyTakePictureTextView.visibility = View.VISIBLE
 
         binding.capturedImageCard.visibility = View.GONE
         binding.resultCard.visibility = View.GONE
-
-        viewModel.cleanData()
-        binding.capturedImageView.setImageBitmap(null)
     }
 }
