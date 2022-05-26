@@ -1,4 +1,4 @@
-package com.bruwus.wastetracker.ui.home.browser
+package com.bruwus.wastetracker.ui.utils.browser
 
 import android.app.PendingIntent
 import android.content.Context

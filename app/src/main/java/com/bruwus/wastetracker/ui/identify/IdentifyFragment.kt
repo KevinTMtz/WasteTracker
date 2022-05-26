@@ -1,7 +1,6 @@
 package com.bruwus.wastetracker.ui.identify
 
 import android.app.Activity.RESULT_OK
-import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -15,7 +14,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bruwus.wastetracker.databinding.FragmentIdentifyBinding
-import com.bruwus.wastetracker.ui.home.browser.InAppBrowser
+import com.bruwus.wastetracker.ui.utils.browser.InAppBrowser
+import com.bruwus.wastetracker.ui.utils.feedback.LoadingIndicator
 import com.bruwus.wastetracker.utils.general.makeToast
 
 class IdentifyFragment : Fragment() {
@@ -27,7 +27,7 @@ class IdentifyFragment : Fragment() {
 
     private lateinit var cameraLauncher: ActivityResultLauncher<Intent>
 
-    private lateinit var progressDialog: ProgressDialog
+    private lateinit var loadingDialog: LoadingIndicator
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,9 +40,7 @@ class IdentifyFragment : Fragment() {
 
         viewModel.wasteIdentification.observe(viewLifecycleOwner) { identifyWasteResult ->
             identifyWasteResult?.let {
-                if (progressDialog.isShowing) {
-                    progressDialog.dismiss()
-                }
+                loadingDialog.show(false)
 
                 binding.resultCard.visibility = View.VISIBLE
 
@@ -65,7 +63,7 @@ class IdentifyFragment : Fragment() {
             cameraIntent()
         }
 
-        progressDialog = ProgressDialog(this.context)
+        loadingDialog = LoadingIndicator(requireActivity())
 
         initCameraLauncher()
 
@@ -91,9 +89,7 @@ class IdentifyFragment : Fragment() {
     }
 
     private fun identifyWaste() {
-        progressDialog.setMessage("Loading...")
-        progressDialog.setCancelable(false)
-        progressDialog.show()
+        loadingDialog.show(true)
 
         viewModel.imageBitmap?.let {
             viewModel.uploadPhotoToFirebase (

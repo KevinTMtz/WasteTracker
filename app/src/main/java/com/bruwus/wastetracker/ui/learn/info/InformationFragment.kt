@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bruwus.wastetracker.databinding.FragmentInformationBinding
-import com.bruwus.wastetracker.ui.home.browser.InAppBrowser
+import com.bruwus.wastetracker.ui.utils.browser.InAppBrowser
 import com.bruwus.wastetracker.ui.learn.data.RecycleTip
 import com.bruwus.wastetracker.ui.learn.data.RecyclerViewData
 import com.bruwus.wastetracker.ui.learn.data.Tool3D
