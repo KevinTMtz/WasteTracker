@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.ActivityAuthBinding
 import com.bruwus.wastetracker.utils.general.makeToast
 import com.bruwus.wastetracker.utils.navigation.goToMainActivity
@@ -44,17 +45,17 @@ class AuthActivity : AppCompatActivity() {
         val confirmPassword = binding.authConfirmPasswordText.text.toString()
 
         if (name.isEmpty() || email.isEmpty()) {
-            makeToast(this, "Input all information", Toast.LENGTH_SHORT)
+            makeToast(this, getString(R.string.validation_input_all_information), Toast.LENGTH_SHORT)
             return
         }
 
         if (password.isEmpty() || confirmPassword.isEmpty()) {
-            makeToast(this, "Enter your password", Toast.LENGTH_SHORT)
+            makeToast(this, getString(R.string.validation_input_password), Toast.LENGTH_SHORT)
             return
         }
 
         if (password != confirmPassword) {
-            makeToast(this, "Passwords do not match", Toast.LENGTH_SHORT)
+            makeToast(this, getString(R.string.validation_passwords_not_match), Toast.LENGTH_SHORT)
             return
         }
 
@@ -67,7 +68,7 @@ class AuthActivity : AppCompatActivity() {
                 Firebase.auth.currentUser?.let { user ->
                     user.updateProfile(profileUpdates)
                         .addOnSuccessListener {
-                            makeToast(this, "Signed up", Toast.LENGTH_SHORT)
+                            makeToast(this, getString(R.string.auth_success_sign_up), Toast.LENGTH_SHORT)
                             goToMainActivity(this)
                         }
                         .addOnFailureListener {
@@ -85,13 +86,13 @@ class AuthActivity : AppCompatActivity() {
         val password = binding.authPasswordText.text.toString()
 
         if (email.isEmpty() || password.isEmpty()) {
-            makeToast(this, "Input all information", Toast.LENGTH_SHORT)
+            makeToast(this, getString(R.string.validation_input_all_information), Toast.LENGTH_SHORT)
             return
         }
 
         Firebase.auth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
-                makeToast(this, "Logged in", Toast.LENGTH_SHORT)
+                makeToast(this, getString(R.string.auth_success_login), Toast.LENGTH_SHORT)
                 goToMainActivity(this)
             }
             .addOnFailureListener {
@@ -103,14 +104,14 @@ class AuthActivity : AppCompatActivity() {
         binding.authNameText.visibility = View.GONE
         binding.authSignUpGroup.visibility = View.GONE
         binding.authLoginGroup.visibility = View.VISIBLE
-        binding.authTitleTextView.text = "Login"
+        binding.authTitleTextView.text = getString(R.string.auth_login)
     }
 
     private fun changeToSignUp() {
         binding.authNameText.visibility = View.VISIBLE
         binding.authLoginGroup.visibility = View.GONE
         binding.authSignUpGroup.visibility = View.VISIBLE
-        binding.authTitleTextView.text = "Sign up"
+        binding.authTitleTextView.text = getString(R.string.auth_sign_up)
     }
 
     override fun onStart() {

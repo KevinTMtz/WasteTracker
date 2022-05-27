@@ -21,7 +21,7 @@ class HorizontalRecyclerViewFragment(private val title: String) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHorizontalRecyclerViewBinding.inflate(inflater, container, false)
 
         binding.sectionTitleTextView.text = title

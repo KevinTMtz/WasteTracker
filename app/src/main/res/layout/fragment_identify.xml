@@ -36,7 +36,7 @@
                     android:id="@+id/title_text_view"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Waste name"
+                    android:text="@string/utils_ui_waste_name_word"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Certainty: 0.5"
+                    android:text="@string/utils_ui_certainty_word"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -60,7 +60,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/lorem_ipsum"
+                    android:text="@string/utils_lorem_ipsum"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -70,6 +70,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/description_text_view">
@@ -79,7 +81,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="Learn more"
+                        android:text="@string/identify_learn_more_button"
                         app:layout_constraintStart_toEndOf="@+id/take_another_button"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,7 +89,7 @@
                         android:id="@+id/take_another_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Start again"
+                        android:text="@string/identify_start_again_button"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -113,7 +115,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            tools:src="@drawable/ic_launcher_background" />
+            tools:src="@drawable/ic_launcher_background"
+            android:contentDescription="@string/identify_captured_image_content_description" />
     </androidx.cardview.widget.CardView>
 
     <ImageButton
@@ -127,14 +130,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/identify_take_photo" />
 
     <TextView
         android:id="@+id/identify_take_picture_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
-        android:text="Take photo"
+        android:text="@string/identify_take_photo"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -13,6 +13,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentIdentifyBinding
 import com.bruwus.wastetracker.ui.utils.browser.InAppBrowser
 import com.bruwus.wastetracker.ui.utils.feedback.LoadingIndicator
@@ -45,12 +46,17 @@ class IdentifyFragment : Fragment() {
                 binding.resultCard.visibility = View.VISIBLE
 
                 binding.titleTextView.text = identifyWasteResult.name
-                binding.certaintyTextView.text = "Certainty: ${identifyWasteResult.certainty}"
+                binding.certaintyTextView.text = getString(R.string.identify_certainty, identifyWasteResult.certainty)
                 binding.descriptionTextView.text = identifyWasteResult.description
 
                 binding.identifyLearnMoreButton.setOnClickListener {
                     InAppBrowser.open(binding.root.context, identifyWasteResult.howTo)
                 }
+            } ?: run {
+                loadingDialog.show(false)
+
+                makeToast(requireActivity(), getString(R.string.identify_error_identifying), Toast.LENGTH_SHORT)
+                cleanUI()
             }
         }
 
@@ -59,8 +65,7 @@ class IdentifyFragment : Fragment() {
         }
 
         binding.takeAnotherButton.setOnClickListener {
-            cleanUIAndData()
-            cameraIntent()
+            cleanUI()
         }
 
         loadingDialog = LoadingIndicator(requireActivity())
@@ -97,7 +102,7 @@ class IdentifyFragment : Fragment() {
                 { storageReference, imageUrl ->
                     viewModel.identifyWaste(imageUrl, storageReference)
                 }, {
-                    makeToast(requireActivity(), "Failed to upload photo", Toast.LENGTH_LONG)
+                    makeToast(requireActivity(), getString(R.string.identify_error_upload_photo), Toast.LENGTH_LONG)
                 }
             )
         }
@@ -114,14 +119,11 @@ class IdentifyFragment : Fragment() {
         binding.identifyTakePictureTextView.visibility = View.GONE
     }
 
-    private fun cleanUIAndData() {
+    private fun cleanUI() {
         binding.takePictureButton.visibility = View.VISIBLE
         binding.identifyTakePictureTextView.visibility = View.VISIBLE
 
         binding.capturedImageCard.visibility = View.GONE
         binding.resultCard.visibility = View.GONE
-
-        viewModel.cleanData()
-        binding.capturedImageView.setImageBitmap(null)
     }
 }

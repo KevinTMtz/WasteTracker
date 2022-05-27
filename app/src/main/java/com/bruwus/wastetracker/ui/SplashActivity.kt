@@ -1,5 +1,6 @@
 package com.bruwus.wastetracker.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.ActivitySplashBinding
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     private lateinit var motionLayout: MotionLayout
     private lateinit var binding: ActivitySplashBinding

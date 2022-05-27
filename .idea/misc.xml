@@ -40,7 +40,7 @@
         <entry key="app/src/main/res/layout/activity_landing_page.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29393115942028986" />
         <entry key="app/src/main/res/layout/activity_main_layout.xml" value="0.29393115942028986" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.29257246376811596" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/cell_column.xml" value="0.422554347826087" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_calculate.xml" value="0.17097264437689969" />
@@ -51,10 +51,15 @@
         <entry key="app/src/main/res/layout/fragment_information.xml" value="0.422554347826087" />
         <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.29393115942028986" />
+        <entry key="app/src/main/res/layout/fragment_number_question.xml" value="0.495018115942029" />
+        <entry key="app/src/main/res/layout/fragment_radio_question.xml" value="0.495018115942029" />
         <entry key="app/src/main/res/layout/fragment_results.xml" value="0.19630192502532928" />
+        <entry key="app/src/main/res/layout/fragment_slider_question.xml" value="0.495018115942029" />
         <entry key="app/src/main/res/layout/fragment_update_account.xml" value="0.335" />
         <entry key="app/src/main/res/layout/home/layout/home_row.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/home_row.xml" value="0.3645833333333333" />
+        <entry key="app/src/main/res/layout/loading_indicator.xml" value="0.495018115942029" />
+        <entry key="app/src/main/res/layout/news_row.xml" value="0.2558257345491388" />
         <entry key="app/src/main/res/layout/progress_indicator.xml" value="1.0" />
         <entry key="app/src/main/res/layout/waste_characteristic.xml" value="0.335" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.21481481481481482" />
@@ -66,5 +71,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.335" />
+      </ProjectState>
+    </option>
   </component>
 </project>
