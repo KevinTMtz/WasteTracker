@@ -71,4 +71,13 @@
     <string name="update_account_delete_button">Borrar cuenta</string>
     <string name="update_account_updated">Cuenta actualizada</string>
     <string name="update_account_deleted">Cuenta eliminada</string>
+    <string name="results_result_image_content_description">Imagen de resultado del cálculo</string>
+    <string name="calculate_select_value_content_description">Selecciona un valor</string>
+    <string name="landing_page_image_content_description">Imagen de Waste Tracker</string>
+    <string name="splash_screen_logo_content_description">Logo de Waste Tracker</string>
+    <string name="learn_cell_column_image_content_description">Ilustración de la celda</string>
+    <string name="account_user_image_content_description">Imagen de cuenta de usuario</string>
+    <string name="identify_captured_image_content_description">Imagen capturada para identificar</string>
+    <string name="information_image_content_description">Ilustración del detalle conoce más</string>
+    <string name="news_row_image_content_description">Ilustración de la noticia</string>
 </resources>

@@ -27,7 +27,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_launcher_background" />
+                app:srcCompat="@drawable/ic_launcher_background"
+                android:contentDescription="@string/learn_cell_column_image_content_description" />
 
             <TextView
                 android:id="@+id/cell_column_title"
@@ -36,7 +37,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="16dp"
-                android:text="Title"
+                android:text="@string/utils_ui_title_word"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textStyle="bold"
@@ -54,7 +55,7 @@
                 android:layout_marginBottom="16dp"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Description"
+                android:text="@string/utils_ui_description_word"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

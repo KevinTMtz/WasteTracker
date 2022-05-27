@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name" translatable="false">Waste Tracker</string>
 
+    // Splash screen
+    <string name="splash_screen_logo_content_description">Waste Tracker logo</string>
+
     // Landing page
     <string name="landing_page_message">Keep track of your waste, identify its different types and reduce it!</string>
     <string name="landing_page_button_login">Login or sign up</string>
+
+    <string name="landing_page_image_content_description">Waste Tracker image</string>
 
     // Auth
     <string name="auth_sign_up">Sign up</string>
@@ -23,6 +28,8 @@
     // News
     <string name="title_news">News</string>
     <string name="news_no_data_found">No news found</string>
+
+    <string name="news_row_image_content_description">News illustration</string>
 
     // Calculate
     <string name="title_calculate">Calculate</string>
@@ -49,6 +56,8 @@
 
     <string name="calculate_question_number_word">Number</string>
 
+    <string name="calculate_select_value_content_description">Select a value</string>
+
     // Calculate results
     <string name="title_results">Results</string>
 
@@ -65,6 +74,8 @@
 
     <string name="results_learn_more_button">Learn what to do</string>
 
+    <string name="results_result_image_content_description">Calculation results image</string>
+
     // Identify
     <string name="title_identify">Identify</string>
 
@@ -78,6 +89,8 @@
     <string name="identify_error_identifying">Error identifying waste type</string>
     <string name="identify_error_upload_photo">Failed to upload photo</string>
 
+    <string name="identify_captured_image_content_description">Captured photo to identify</string>
+
     // Learn
     <string name="title_learn">Learn</string>
 
@@ -89,6 +102,8 @@
     <string name="learn_no_recycle_tips_found">No recycle tips found</string>
     <string name="learn_no_3d_tools_found">No 3D tools founds</string>
 
+    <string name="learn_cell_column_image_content_description">Cell illustration</string>
+
     // Information
     <string name="title_information">Know more</string>
 
@@ -98,11 +113,15 @@
 
     <string name="information_check_3d_tool_button">Check 3D model</string>
 
+    <string name="information_image_content_description">Know more detail image</string>
+
     // Account
     <string name="title_account">Account</string>
 
     <string name="account_update_account_info_button">Update my account</string>
     <string name="account_logout_button">Logout</string>
+
+    <string name="account_user_image_content_description">User account profile picture</string>
 
     // Update account
     <string name="title_update_account">Update Account</string>
@@ -116,6 +135,22 @@
     // Utils
     <string name="utils_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
     <string name="utils_loading">Loading…</string>
+
+    // Utils UI
+    <string name="utils_ui_title_word" translatable="false">Title</string>
+    <string name="utils_ui_description_word" translatable="false">Description</string>
+    <string name="utils_ui_category_word" translatable="false">Category</string>
+
+    <string name="utils_ui_email_word" translatable="false">waste.destroyer@gmail.com</string>
+    <string name="utils_ui_name_word" translatable="false">Waste Destroyer</string>
+
+    <string name="utils_ui_question_number_word" translatable="false">Question number</string>
+    <string name="utils_ui_question_text_word" translatable="false">Question text</string>
+
+    <string name="utils_ui_waste_name_word" translatable="false">Waste name</string>
+    <string name="utils_ui_certainty_word" translatable="false">Certainty: 50.00%</string>
+
+    <string name="utils_ui_result_kilograms_word" translatable="false">2000kg</string>
 
     // Validation
     <string name="validation_input_all_information">Input all information</string>

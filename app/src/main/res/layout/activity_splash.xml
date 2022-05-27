@@ -20,5 +20,6 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/leaf"
         tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="311dp" />
+        tools:layout_editor_absoluteY="311dp"
+        android:contentDescription="@string/splash_screen_logo_content_description" />
 </androidx.constraintlayout.motion.widget.MotionLayout>

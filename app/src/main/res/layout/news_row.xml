@@ -27,7 +27,8 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_launcher_background" />
+                app:srcCompat="@drawable/ic_launcher_background"
+                android:contentDescription="@string/news_row_image_content_description" />
 
             <LinearLayout
                 android:layout_width="0dp"

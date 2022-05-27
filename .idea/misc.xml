@@ -40,7 +40,7 @@
         <entry key="app/src/main/res/layout/activity_landing_page.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29393115942028986" />
         <entry key="app/src/main/res/layout/activity_main_layout.xml" value="0.29393115942028986" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.29257246376811596" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/cell_column.xml" value="0.422554347826087" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_calculate.xml" value="0.17097264437689969" />
