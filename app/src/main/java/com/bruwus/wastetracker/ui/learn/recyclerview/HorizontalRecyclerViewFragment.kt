@@ -13,7 +13,7 @@ import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentHorizontalRecyclerViewBinding
 import com.bruwus.wastetracker.ui.learn.adapter.HorizontalRecyclerViewAdapter
 
-class HorizontalRecyclerViewFragment(private val title: String) : Fragment() {
+class HorizontalRecyclerViewFragment() : Fragment() {
     private lateinit var binding: FragmentHorizontalRecyclerViewBinding
 
     var adapter: HorizontalRecyclerViewAdapter = HorizontalRecyclerViewAdapter(listOf())
@@ -24,7 +24,7 @@ class HorizontalRecyclerViewFragment(private val title: String) : Fragment() {
     ): View {
         binding = FragmentHorizontalRecyclerViewBinding.inflate(inflater, container, false)
 
-        binding.sectionTitleTextView.text = title
+        binding.sectionTitleTextView.text = arguments?.getString("title")
 
         val recyclerView : RecyclerView = binding.recyclerView
 

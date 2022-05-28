@@ -6,18 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentSliderQuestionBinding
+import com.bruwus.wastetracker.ui.calculate.data.QuestionArgs
 
-class SliderQuestionFragment(
-    private val number: Int,
-    private val question: String,
-    multiplier: Double = 1.0
-) : QuestionFragment(multiplier) {
+class SliderQuestionFragment: QuestionFragment() {
     private lateinit var binding: FragmentSliderQuestionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        binding = FragmentSliderQuestionBinding.inflate(inflater, container, false)
+
         val labels = mapOf(
             0 to getString(R.string.calculate_likert_never),
             1 to getString(R.string.calculate_likert_hardly_never),
@@ -26,10 +25,10 @@ class SliderQuestionFragment(
             4 to getString(R.string.calculate_likert_usually),
         )
 
-        binding = FragmentSliderQuestionBinding.inflate(inflater, container, false)
+        questionArgs = arguments?.getSerializable("questionArgs") as QuestionArgs?
 
-        binding.questionNumber.text = getString(R.string.calculate_question_num, "#", number)
-        binding.questionText.text = question
+        binding.questionNumber.text = getString(R.string.calculate_question_num, "#", questionArgs?.number)
+        binding.questionText.text = questionArgs?.text
         answer = binding.slider.value.toDouble()
 
         binding.slider.addOnChangeListener { _, value, _ ->

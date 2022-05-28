@@ -7,12 +7,9 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentRadioQuestionBinding
+import com.bruwus.wastetracker.ui.calculate.data.QuestionArgs
 
-class RadioQuestionFragment(
-    private val number: Int,
-    private val question: String,
-    multiplier: Double = 1.0
-) : QuestionFragment(multiplier) {
+class RadioQuestionFragment: QuestionFragment() {
     private lateinit var binding: FragmentRadioQuestionBinding
 
     override fun onCreateView(
@@ -21,8 +18,10 @@ class RadioQuestionFragment(
     ): View {
         binding = FragmentRadioQuestionBinding.inflate(inflater, container, false)
 
-        binding.questionNumber.text = getString(R.string.calculate_question_num, "#", number)
-        binding.questionText.text = question
+        questionArgs = arguments?.getSerializable("questionArgs") as QuestionArgs?
+
+        binding.questionNumber.text = getString(R.string.calculate_question_num, "#", questionArgs?.number)
+        binding.questionText.text = questionArgs?.text
         binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
             val checked = group.findViewById<RadioButton>(checkedId)
             answer = checked.tag.toString().toDouble()

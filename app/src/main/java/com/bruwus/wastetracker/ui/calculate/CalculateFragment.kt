@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentCalculateBinding
 import com.bruwus.wastetracker.ui.calculate.data.CalculatorData
+import com.bruwus.wastetracker.ui.calculate.data.FragmentAndArgs
+import com.bruwus.wastetracker.ui.calculate.data.QuestionArgs
 import com.bruwus.wastetracker.ui.calculate.questions.NumberQuestionFragment
 import com.bruwus.wastetracker.ui.calculate.questions.QuestionFragment
 import com.bruwus.wastetracker.ui.calculate.questions.RadioQuestionFragment
@@ -22,25 +24,40 @@ class CalculateFragment : Fragment() {
     private var _binding: FragmentCalculateBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var questions: List<QuestionFragment>
-    private var i = 0
+    private lateinit var fragmentsToInstantiate: List<FragmentAndArgs>
+    private lateinit var questions: MutableList<QuestionFragment>
+
+    private var currentQuestion = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        questions = listOf(
-            SliderQuestionFragment(1, getString(R.string.calculate_question_1)),
-            RadioQuestionFragment(2, getString(R.string.calculate_question_2)),
-            SliderQuestionFragment(3, getString(R.string.calculate_question_3), 5.0),
-            NumberQuestionFragment(4, getString(R.string.calculate_question_4), 15.0)
-        )
-
         _binding = FragmentCalculateBinding.inflate(inflater, container, false)
 
+        fragmentsToInstantiate = listOf(
+            FragmentAndArgs(SliderQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_1), 1.0)),
+            FragmentAndArgs(RadioQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_2), 1.0)),
+            FragmentAndArgs(SliderQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_3), 5.0)),
+            FragmentAndArgs(NumberQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_4), 15.0)),
+        )
+
+        questions = mutableListOf()
+
+        fragmentsToInstantiate.forEachIndexed { index, fragmentAndArgs ->
+            val args = Bundle()
+
+            fragmentAndArgs.args.number = index + 1
+            args.putSerializable("questionArgs", fragmentAndArgs.args)
+
+            fragmentAndArgs.fragment.arguments = args
+
+            questions.add(fragmentAndArgs.fragment)
+        }
+
         activity?.supportFragmentManager?.commit {
-            i = 0
-            replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i + 1}")
+            currentQuestion = 0
+            replace(R.id.calculate_linear_layout, questions[currentQuestion], "fragment_question_${currentQuestion + 1}")
             setReorderingAllowed(true)
         }
 
@@ -63,13 +80,13 @@ class CalculateFragment : Fragment() {
     }
 
     private fun getPrevQuestion() {
-        if (i > 0) {
-            i--
+        if (currentQuestion > 0) {
+            currentQuestion--
 
-            checkIfShowBackButton(i)
+            checkIfShowBackButton(currentQuestion)
 
             activity?.supportFragmentManager?.commit {
-                replace(R.id.calculate_linear_layout, questions[i], "fragment_question_${i + 1}")
+                replace(R.id.calculate_linear_layout, questions[currentQuestion], "fragment_question_${currentQuestion + 1}")
                 setReorderingAllowed(true)
             }
         }
@@ -77,7 +94,7 @@ class CalculateFragment : Fragment() {
 
     private fun getNextQuestion() {
 
-        if (!questions[i].isAnswered()) {
+        if (!questions[currentQuestion].isAnswered()) {
             makeToast(
                 requireActivity(),
                 getString(R.string.calculate_validate_question),
@@ -86,10 +103,10 @@ class CalculateFragment : Fragment() {
             return
         }
 
-        i++
-        checkIfShowBackButton(i)
+        currentQuestion++
+        checkIfShowBackButton(currentQuestion)
 
-        if (i == questions.size) {
+        if (currentQuestion == questions.size) {
             getResults()
             return
         }
@@ -97,8 +114,8 @@ class CalculateFragment : Fragment() {
         activity?.supportFragmentManager?.commit {
             replace(
                 R.id.calculate_linear_layout,
-                questions[i],
-                "fragment_question_${i + 1}"
+                questions[currentQuestion],
+                "fragment_question_${currentQuestion + 1}"
             )
             setReorderingAllowed(true)
 
