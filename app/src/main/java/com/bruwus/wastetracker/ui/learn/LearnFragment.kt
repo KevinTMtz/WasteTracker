@@ -31,6 +31,14 @@ class LearnFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[LearnViewModel::class.java]
 
+        viewModel.initViewModel()
+
+        return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
         val titles = listOf(
             getString(R.string.learn_types_of_waste),
             getString(R.string.learn_recycle_tips),
@@ -72,10 +80,20 @@ class LearnFragment : Fragment() {
         viewModel.tools3D.observe(viewLifecycleOwner) { tools3D ->
             setFragmentData(fragments[2], tools3D)
         }
+    }
 
-        viewModel.initViewModel()
+    override fun onPause() {
+        super.onPause()
 
-        return binding.root
+        for (i in 0..3) {
+            val currentFragment = activity?.supportFragmentManager?.findFragmentByTag("fragment_$i")
+
+            if (currentFragment != null)
+                activity?.supportFragmentManager?.commit {
+                    remove(currentFragment)
+                    setReorderingAllowed(true)
+                }
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
