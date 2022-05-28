@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bruwus.wastetracker.R
@@ -24,6 +25,8 @@ class LearnFragment : Fragment() {
 
     private lateinit var viewModel: LearnViewModel
 
+    private val fragments = mutableListOf<HorizontalRecyclerViewFragment>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -39,59 +42,53 @@ class LearnFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
+        loadFragments()
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        removeFragments()
+    }
+
+    private fun loadFragments() {
         val titles = listOf(
             getString(R.string.learn_types_of_waste),
             getString(R.string.learn_recycle_tips),
             getString(R.string.learn_print_3d)
         )
 
-        val fragments = mutableListOf(
-            HorizontalRecyclerViewFragment(),
-            HorizontalRecyclerViewFragment(),
-            HorizontalRecyclerViewFragment()
-        )
-
         titles.forEachIndexed { index, s ->
-            val args = Bundle()
-            args.putString("title", s)
-            fragments[index].arguments = args
-        }
-
-        fragments.forEachIndexed { index, fragment ->
             val currentFragment = activity?.supportFragmentManager?.findFragmentByTag("fragment_$index")
 
             if (currentFragment == null)
-                activity?.supportFragmentManager?.commit {
-                    add(R.id.linear_layout, fragment, "fragment_$index")
-                    setReorderingAllowed(true)
-                }
+                fragments.add(HorizontalRecyclerViewFragment())
             else
-                fragments[index] = currentFragment as HorizontalRecyclerViewFragment
-        }
+                fragments.add(currentFragment as HorizontalRecyclerViewFragment)
 
-        viewModel.wasteTypes.observe(viewLifecycleOwner) { wasteTypes ->
-            setFragmentData(fragments[0], wasteTypes)
-        }
+            activity?.supportFragmentManager?.commit {
+                add(R.id.linear_layout, fragments[index], "fragment_$index")
+                setReorderingAllowed(true)
+            }
 
-        viewModel.recycleTips.observe(viewLifecycleOwner) { recycleTips ->
-            setFragmentData(fragments[1], recycleTips)
-        }
+            val args = Bundle()
+            args.putString("title", s)
+            fragments[index].arguments = args
 
-        viewModel.tools3D.observe(viewLifecycleOwner) { tools3D ->
-            setFragmentData(fragments[2], tools3D)
+            viewModel.lists[index].observe(viewLifecycleOwner) { recyclerData ->
+                setFragmentData(fragments[index], recyclerData)
+            }
         }
     }
 
-    override fun onPause() {
-        super.onPause()
-
-        for (i in 0..3) {
+    private fun removeFragments() {
+        for (i in 0..fragments.size) {
             val currentFragment = activity?.supportFragmentManager?.findFragmentByTag("fragment_$i")
 
             if (currentFragment != null)
                 activity?.supportFragmentManager?.commit {
                     remove(currentFragment)
-                    setReorderingAllowed(true)
+                    setReorderingAllowed(false)
                 }
         }
     }
