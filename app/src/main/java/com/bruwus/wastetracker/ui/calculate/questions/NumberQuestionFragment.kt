@@ -21,8 +21,6 @@ class NumberQuestionFragment: QuestionFragment() {
 
         questionArgs = arguments?.getSerializable("questionArgs") as QuestionArgs?
 
-        multiplier = questionArgs?.multiplier
-
         binding.questionNumber.text = getString(R.string.calculate_question_num, "#", questionArgs?.number)
         binding.questionText.text = questionArgs?.text
 
