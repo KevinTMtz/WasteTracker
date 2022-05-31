@@ -24,7 +24,7 @@ class LearnViewModel : ViewModel() {
     private val _tools3D = MutableLiveData<List<Tool3D>>()
     private val tools3D: LiveData<List<Tool3D>> get() = _tools3D
 
-    private val locale = Locale.getDefault().language
+    private var locale: String = ""
 
     val lists = listOf(
         wasteTypes,
@@ -32,10 +32,16 @@ class LearnViewModel : ViewModel() {
         tools3D
     )
 
-    fun initViewModel() {
-        fetchData("wasteType/language/${locale}", _wasteTypes)
-        fetchData("recycleTip/language/${locale}", _recycleTips)
-        fetchData("tool3D/language/${locale}", _tools3D)
+    fun fetchAllData() {
+        val newLocale = Locale.getDefault().language
+
+        if (locale != newLocale) {
+            locale = newLocale
+
+            fetchData("wasteType/language/${locale}", _wasteTypes)
+            fetchData("recycleTip/language/${locale}", _recycleTips)
+            fetchData("tool3D/language/${locale}", _tools3D)
+        }
     }
 
     private inline fun <reified T> fetchData(referencePath: String, list: MutableLiveData<List<T>>) {

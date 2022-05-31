@@ -31,14 +31,13 @@ class LearnFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[LearnViewModel::class.java]
 
-        viewModel.initViewModel()
-
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
 
+        viewModel.fetchAllData()
         loadFragments()
     }
 
