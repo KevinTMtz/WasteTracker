@@ -36,10 +36,14 @@ class CalculateFragment : Fragment() {
         _binding = FragmentCalculateBinding.inflate(inflater, container, false)
 
         fragmentsToInstantiate = listOf(
-            FragmentAndArgs(SliderQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_1), 1.0)),
-            FragmentAndArgs(RadioQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_2), 1.0)),
-            FragmentAndArgs(SliderQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_3), 5.0)),
-            FragmentAndArgs(NumberQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_4), 15.0)),
+            FragmentAndArgs(SliderQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_1), 2.0)),
+            FragmentAndArgs(RadioQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_2), 2.0)),
+            FragmentAndArgs(SliderQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_3), 10.0)),
+            FragmentAndArgs(RadioQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_4), 6.0)),
+            FragmentAndArgs(RadioQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_5), 6.0)),
+            FragmentAndArgs(NumberQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_6), 10.0)),
+            FragmentAndArgs(SliderQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_7), 10.0)),
+            FragmentAndArgs(NumberQuestionFragment(), QuestionArgs(getString(R.string.calculate_question_8), 6.0)),
         )
 
         questions = mutableListOf()

@@ -25,10 +25,7 @@ class NumberQuestionFragment: QuestionFragment() {
         binding.questionText.text = questionArgs?.text
 
         binding.numberInput.doOnTextChanged { text, _, _, _ ->
-            answer = if (!text.isNullOrEmpty())
-                text.toString().toDouble()
-            else
-                null
+            answer = text.toString().toDoubleOrNull()
         }
 
         return binding.root

@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bruwus.wastetracker.ui.learn.data.RecycleTip
-import com.bruwus.wastetracker.ui.learn.data.RecyclerViewData
 import com.bruwus.wastetracker.ui.learn.data.Tool3D
 import com.bruwus.wastetracker.ui.learn.data.WasteType
 import com.google.firebase.firestore.ktx.firestore

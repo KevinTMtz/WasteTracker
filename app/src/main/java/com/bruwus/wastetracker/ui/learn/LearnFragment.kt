@@ -8,12 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentLearnBinding
-import com.bruwus.wastetracker.ui.calculate.questions.QuestionFragment
 import com.bruwus.wastetracker.ui.learn.data.RecyclerViewData
 import com.bruwus.wastetracker.ui.learn.recyclerview.HorizontalRecyclerViewFragment
 import com.bruwus.wastetracker.utils.general.makeToast

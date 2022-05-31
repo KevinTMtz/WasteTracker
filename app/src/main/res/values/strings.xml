@@ -42,9 +42,14 @@
     <string name="calculate_likert_usually">Usually</string>
 
     <string name="calculate_question_1">How often do you recycle?</string>
-    <string name="calculate_question_2">Do you own an electric car?</string>
+    <string name="calculate_question_2">Do you use plastic bags?</string>
     <string name="calculate_question_3">How often do you reuse?</string>
-    <string name="calculate_question_4">How many km do you travel by car</string>
+    <string name="calculate_question_4">Do you buy takeaway food?</string>
+    <string name="calculate_question_5">Do you buy aluminum cans?</string>
+    <string name="calculate_question_6">Every how many years do you change your phone?</string>
+    <string name="calculate_question_7">How often do you buy clothes?</string>
+    <string name="calculate_question_8">How many paper rolls do you user every week?</string>
+
 
     <string name="calculate_validate_question">Please, answer the question before continuing</string>
 
@@ -68,9 +73,15 @@
     <string name="results_average">Average</string>
     <string name="results_more_than_average">More than Average</string>
 
-    <string name="results_advice_less_than">Some advices for this type of consumer (Below avg)</string>
-    <string name="results_advice_average">Some advices for this type of consumer (Avg)</string>
-    <string name="results_advice_more_than_average">Some advices for this type of consumer (More than avg)</string>
+    <string name="results_advice_less_than">
+        "- Use a reusable bottle/cup for beverages on-the-go\n- Use reusable grocery bags, and not just for groceries\n- Purchase wisely and recycle"
+    </string>
+    <string name="results_advice_average">
+        "- Avoid single-use food and drink containers and utensils\n- Buy secondhand items and donate used goods\n- Use reusable grocery bags, and not just for groceries"
+    </string>
+    <string name="results_advice_more_than_average">
+        "- Shop local farmers markets and buy in bulk to reduce packaging\n- Curb your use of paper: mail, receipts, magazines\n- Use reusable grocery bags, and not just for groceries"
+    </string>
 
     <string name="results_learn_more_button">Learn what to do</string>
 
@@ -133,7 +144,7 @@
     <string name="update_account_deleted">Deleted account</string>
 
     // Utils
-    <string name="utils_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="utils_lorem_ipsum" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
     <string name="utils_loading">Loading…</string>
 
     // Utils UI
