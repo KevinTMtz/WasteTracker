@@ -7,12 +7,9 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentNumberQuestionBinding
+import com.bruwus.wastetracker.ui.calculate.data.QuestionArgs
 
-class NumberQuestionFragment(
-    private val number: Int,
-    private val question: String,
-    multiplier: Double = 1.0
-) : QuestionFragment(multiplier) {
+class NumberQuestionFragment: QuestionFragment() {
 
     private lateinit var binding: FragmentNumberQuestionBinding
 
@@ -22,14 +19,18 @@ class NumberQuestionFragment(
     ): View {
         binding = FragmentNumberQuestionBinding.inflate(inflater, container, false)
 
-        binding.questionNumber.text = getString(R.string.calculate_question_num, "#", number)
-        binding.questionText.text = question
+        questionArgs = arguments?.getSerializable("questionArgs") as QuestionArgs?
+
+        binding.questionNumber.text = getString(R.string.calculate_question_num, "#", questionArgs?.number)
+        binding.questionText.text = questionArgs?.text
 
         binding.numberInput.doOnTextChanged { text, _, _, _ ->
-            answer = text.toString().toDouble()
+            answer = if (!text.isNullOrEmpty())
+                text.toString().toDouble()
+            else
+                null
         }
 
         return binding.root
     }
-
 }
