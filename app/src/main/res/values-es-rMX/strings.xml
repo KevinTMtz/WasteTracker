@@ -48,7 +48,7 @@
     <string name="calculate_question_3">¿Qué tan seguido reutilizas?</string>
     <string name="calculate_question_2">¿Utilizas bolsas de plástico?</string>
     <string name="calculate_question_1">¿Qué tan seguido reciclas?</string>
-    <string name="calculate_question_4">¿Cuántos km recorres en coche?</string>
+    <string name="calculate_question_4">¿Compras comida para llevar?</string>
     <string name="calculate_question_number_word">Número</string>
     <string name="calculate_question_next_button">Siguiente</string>
     <string name="calculate_question_back_button">Atrás</string>
@@ -87,6 +87,6 @@
     <string name="news_row_image_content_description">Ilustración de la noticia</string>
     <string name="calculate_question_5">¿Compras latas de aluminio?</string>
     <string name="calculate_question_6">¿Cada cuantos años cambias tu celular?</string>
-    <string name="calculate_question_7">¿Qué tan seguido compras ropa?</string>
+    <string name="calculate_question_7">¿Qué tan seguido compras ropa nueva?</string>
     <string name="calculate_question_8">¿Cuántos rollos de papel de baño usas a la semana?</string>
 </resources>
