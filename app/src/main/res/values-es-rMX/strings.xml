@@ -8,7 +8,6 @@
     <string name="title_information">Conoce más</string>
     <string name="title_account">Usuario</string>
     <string name="title_update_account">Actualizar cuenta</string>
-    <string name="utils_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
     <string name="utils_loading">Cargando…</string>
     <string name="landing_page_message">¡Haz un seguimiento de tus residuos, identifica sus diferentes tipos y redúcelos!</string>
     <string name="landing_page_button_login">Inicia sesión o regístrate</string>
@@ -35,13 +34,19 @@
     <string name="results_less_than">Menos que el promedio</string>
     <string name="results_average">Promedio</string>
     <string name="results_more_than_average">Más que el promedio</string>
-    <string name="results_advice_less_than">Algunos consejos para este consumidor (Menos que el promedio)</string>
-    <string name="results_advice_average">Algunos consejos para este consumidor (Promedio)</string>
-    <string name="results_advice_more_than_average">Algunos consejos para este consumidor (Más que el promedio)</string>
+    <string name="results_advice_less_than">
+        "- Use una botella/taza reutilizable para bebidas sobre la marcha\n- Use bolsas de supermercado reutilizables, y no solo para comestibles\n- Compre sabiamente y recicle"
+    </string>
+    <string name="results_advice_average">
+        "- Evitar recipientes y utensilios de comida y bebida de un solo uso\n- Compre artículos de segunda mano y done bienes usados\n- Use bolsas de supermercado reutilizables, y no solo para comestibles"
+    </string>
+    <string name="results_advice_more_than_average">
+        "- Compre en los mercados de agricultores locales y compre a granel para reducir el empaque\n- Reduzca su uso de papel: correo, recibos, revistas\n- Use bolsas de supermercado reutilizables, y no solo para comestibles"
+    </string>
     <string name="calculate_question_radio_yes">Sí</string>
     <string name="calculate_validate_question">Antes de continuar, contesta la pregunta</string>
     <string name="calculate_question_3">¿Qué tan seguido reutilizas?</string>
-    <string name="calculate_question_2">¿Utilizas un coche eléctrico?</string>
+    <string name="calculate_question_2">¿Utilizas bolsas de plástico?</string>
     <string name="calculate_question_1">¿Qué tan seguido reciclas?</string>
     <string name="calculate_question_4">¿Cuántos km recorres en coche?</string>
     <string name="calculate_question_number_word">Número</string>
@@ -80,4 +85,8 @@
     <string name="identify_captured_image_content_description">Imagen capturada para identificar</string>
     <string name="information_image_content_description">Ilustración del detalle conoce más</string>
     <string name="news_row_image_content_description">Ilustración de la noticia</string>
+    <string name="calculate_question_5">¿Compras latas de aluminio?</string>
+    <string name="calculate_question_6">¿Cada cuantos años cambias tu celular?</string>
+    <string name="calculate_question_7">¿Qué tan seguido compras ropa?</string>
+    <string name="calculate_question_8">¿Cuántos rollos de papel de baño usas a la semana?</string>
 </resources>
