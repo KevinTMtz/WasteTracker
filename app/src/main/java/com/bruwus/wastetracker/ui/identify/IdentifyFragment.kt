@@ -102,6 +102,9 @@ class IdentifyFragment : Fragment() {
                 { storageReference, imageUrl ->
                     viewModel.identifyWaste(imageUrl, storageReference)
                 }, {
+                    loadingDialog.show(false)
+                    
+                    cleanUI()
                     makeToast(requireActivity(), getString(R.string.identify_error_upload_photo), Toast.LENGTH_LONG)
                 }
             )
