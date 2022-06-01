@@ -44,18 +44,26 @@ class IdentifyViewModel : ViewModel() {
         val imageId = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault())
         val imageName = imageId.format(Date())
 
-        val storageReference = FirebaseStorage.getInstance().getReference("identifyWaste/${imageName}")
+        val waitTime = 10000.toLong()
+        val firebaseStorage = FirebaseStorage.getInstance()
+        firebaseStorage.maxOperationRetryTimeMillis = waitTime
+        firebaseStorage.maxUploadRetryTimeMillis = waitTime
+        firebaseStorage.maxDownloadRetryTimeMillis = waitTime
+
+        val storageReference = firebaseStorage.getReference("identifyWaste/${imageName}")
         val bytes = ByteArrayOutputStream()
 
         imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes)
-        storageReference.putBytes(bytes.toByteArray()).addOnSuccessListener { snapshot ->
-            snapshot.storage.downloadUrl.addOnCompleteListener { task ->
-                val imageUrl = task.result.toString()
+        storageReference.putBytes(bytes.toByteArray())
+            .addOnSuccessListener { snapshot ->
+                snapshot.storage.downloadUrl.addOnCompleteListener { task ->
+                    val imageUrl = task.result.toString()
 
-                onSuccess(storageReference, imageUrl)
+                    onSuccess(storageReference, imageUrl)
+                }
             }
-        }.addOnFailureListener {
-            onFailure()
-        }
+            .addOnFailureListener {
+                onFailure()
+            }
     }
 }

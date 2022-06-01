@@ -3,7 +3,7 @@ package com.bruwus.wastetracker.utils.navigation
 import android.app.Activity
 import android.content.Intent
 import com.bruwus.wastetracker.MainActivity
-import com.bruwus.wastetracker.ui.LandingPageActivity
+import com.bruwus.wastetracker.ui.landingpage.LandingPageActivity
 
 fun goToMainActivity(activity: Activity) {
     val intent = Intent(activity, MainActivity::class.java)

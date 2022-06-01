@@ -13,7 +13,7 @@ import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.FragmentHorizontalRecyclerViewBinding
 import com.bruwus.wastetracker.ui.learn.adapter.HorizontalRecyclerViewAdapter
 
-class HorizontalRecyclerViewFragment() : Fragment() {
+class HorizontalRecyclerViewFragment : Fragment() {
     private lateinit var binding: FragmentHorizontalRecyclerViewBinding
 
     var adapter: HorizontalRecyclerViewAdapter = HorizontalRecyclerViewAdapter(listOf())

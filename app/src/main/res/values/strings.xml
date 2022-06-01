@@ -47,7 +47,7 @@
     <string name="calculate_question_4">Do you buy takeaway food?</string>
     <string name="calculate_question_5">Do you buy aluminum cans?</string>
     <string name="calculate_question_6">Every how many years do you change your phone?</string>
-    <string name="calculate_question_7">How often do you buy clothes?</string>
+    <string name="calculate_question_7">How often do you buy new clothes?</string>
     <string name="calculate_question_8">How many paper rolls do you user every week?</string>
 
 
@@ -109,9 +109,7 @@
     <string name="learn_recycle_tips">Recycle tips</string>
     <string name="learn_print_3d">Print 3D tools</string>
 
-    <string name="learn_no_waste_types_found">No waste types found</string>
-    <string name="learn_no_recycle_tips_found">No recycle tips found</string>
-    <string name="learn_no_3d_tools_found">No 3D tools founds</string>
+    <string name="learn_no_data_found">No learn data found</string>
 
     <string name="learn_cell_column_image_content_description">Cell illustration</string>
 

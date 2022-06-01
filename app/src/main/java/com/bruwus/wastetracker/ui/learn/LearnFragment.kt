@@ -31,14 +31,13 @@ class LearnFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[LearnViewModel::class.java]
 
-        viewModel.initViewModel()
-
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
 
+        viewModel.fetchAllData()
         loadFragments()
     }
 
@@ -100,7 +99,7 @@ class LearnFragment : Fragment() {
                 remove(fragment)
                 setReorderingAllowed(true)
             }
-            makeToast(requireActivity(), getString(R.string.learn_no_waste_types_found), Toast.LENGTH_LONG)
+            makeToast(requireActivity(), getString(R.string.learn_no_data_found), Toast.LENGTH_LONG)
         }
     }
 }
