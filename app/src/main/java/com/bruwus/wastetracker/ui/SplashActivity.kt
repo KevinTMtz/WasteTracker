@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import com.bruwus.wastetracker.R
 import com.bruwus.wastetracker.databinding.ActivitySplashBinding
+import com.bruwus.wastetracker.ui.landingpage.LandingPageActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
